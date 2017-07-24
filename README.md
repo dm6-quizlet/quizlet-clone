@@ -1,11 +1,11 @@
 ## Quizlet
 
-Welcome to Quizlet! Quizlet is a study tool for anyone who wishes to practice and master whatever they are learning. Quizlet provides engaging, customizable activities with contributions from people everywhere.
+Welcome to Quizlet! Quizlet is an online learning tool made to help people practice and master whatever they are learning. Quizlet provides engaging, customizable activities with contributions from people everywhere.
 
-## Getting started
+##How Quizlet works
 
-Once you've made an account with Quizlet, you can create your own study sets with the material that you wish to learn. You can also search for sets on a certain topic that has been made by other people. 
+Once you have made an account on Quizlet, you can create your own study sets and even search for certain topics that have already been made by other people. Quizlet is a very effective way to expand your current skills in whatever you're doing. 
 
-##Using Flashcards
+##Flashcards
 
-The flashcard option lets you study Quizlet sets as flashcards. The first thing to show when you click on a flashcard will be the definition by default. You can change that option the settings though, if you'd like. You can shuffle your flashcards so you dont get the same cards in a specific order too.
+Flashcards are one of Quizlet's amazing learning tools. When you click the Flashcards mode, you'll see the definition first but you can change that in the Options menu to show the term first. To use the next card, just click the arrows below the card or use the right and left  arrows on your keyboard.
