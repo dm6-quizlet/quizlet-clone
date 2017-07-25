@@ -23,13 +23,12 @@ class Nav extends Component {
           <div className="nav-login">
             <ul>
               <li id="navbar-login">Log In</li>
-              <li><button type="button" className="btn btn-default navbar-btn">Sign Up</button></li>
+              <li><button type="button" className="btn btn-default navbar-btn" id="sign-up-btn">Sign Up</button></li>
             </ul>
           </div>
 
         </div>
       </nav>
-
     )
   }
 }
