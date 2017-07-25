@@ -12,6 +12,11 @@
   margin-right: 40px;
   margin-left: 10%;
 }
+
+.container-fluid a {
+  text-decoration: none;
+}
+
 .nav-search, .nav-create {
   height: 61px;
   width: 144px;
@@ -19,6 +24,16 @@
   align-items: center;
   justify-content: center;
   color:white;
+}
+
+.nav-search:hover {
+  transition: .5s;
+  color: #5C6EBC;
+}
+
+.nav-create:hover {
+  transition: .5s;
+  color: #5C6EBC;
 }
 
 .glyphicon {
@@ -43,6 +58,11 @@
   color: white;
 }
 
+#navbar-login:hover {
+  transition: .5s;
+  color: #5C6EBC;
+}
+
 
 .btn.btn-default.navbar-btn {
   background-color: #3DCECF;
@@ -52,4 +72,10 @@
   height: 45px;
   width: 100px;
   margin-left: 25px;
+}
+
+.btn.btn-default.navbar-btn:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
 }
