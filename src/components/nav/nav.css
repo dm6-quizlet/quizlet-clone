@@ -1,0 +1,55 @@
+.Nav .container-fluid{
+  background-color: #4257B2;
+  border-radius: 0px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+#quizlet-logo {
+  color: white;
+  font-size: 25px;
+  margin-right: 40px;
+  margin-left: 10%;
+}
+.nav-search, .nav-create {
+  height: 61px;
+  width: 144px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+}
+
+.glyphicon {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.separator {
+  font-size: 2em;
+  color: #3B4C9B;
+}
+.nav-login {
+  margin-right: 10%;
+  position: absolute;
+  right: 25px;
+}
+.nav-login ul{
+  list-style: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+
+.btn.btn-default.navbar-btn {
+  background-color: #3DCECF;
+  border: none;
+  border-radius: 0px;
+  color: white;
+  height: 45px;
+  width: 100px;
+  margin-left: 25px;
+}
