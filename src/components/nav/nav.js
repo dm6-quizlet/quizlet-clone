@@ -6,7 +6,7 @@ import './Nav.css'
 class Nav extends Component {
   render() {
     return (
-      <h1>Hello Nav!</h1>
+      <h1 className="container">Hello Nav!<button className="btn btn-primary">Hi</button></h1>
     )
   }
 }
