@@ -1,6 +1,6 @@
 import React, { Component }from "react";
-
-export class SignUpModal extends Component {
+import './SignUpModal.css'
+export default class SignUpModal extends Component {
     render() {
         return (
             <div className="UI-Modal-Box">
@@ -37,7 +37,7 @@ export class SignUpModal extends Component {
                         <div></div>
                     </form>
                 </div>
-            </div>    
+            </div>
         )
     }
 }
