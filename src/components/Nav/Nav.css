@@ -93,6 +93,11 @@
   color: #6E6E4B;
 }
 
+#upgrade-btn {
+  height: 55px;
+  padding: 8px;
+}
+
 .new-search {
   width: 100%;
   display: none;

@@ -74,7 +74,7 @@ class Nav extends Component {
                   </ul>
                 :
                   <ul>
-                    <li><div type="button" className="sign-up-btn">Upgrade to Quizlet Plus</div></li>
+                    <li><div type="button" className="sign-up-btn" id="upgrade-btn">Upgrade to Quizlet Plus</div></li>
                     <li>
                       <div className="username" onClick={this.showDropdown}>Username</div>
                       {this.state.showDropdown
