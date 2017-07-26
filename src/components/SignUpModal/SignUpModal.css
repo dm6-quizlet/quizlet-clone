@@ -1,0 +1,17 @@
+body 
+{
+    margin: 0px;
+}
+.UI-Modal-Box
+{
+    left: 50%;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    width: 37.5rem;
+}
+.Sign-Up-Modal-Box 
+{
+    padding: 2.5rem 2rem 3.75rem 2rem;
+    font-family: 'Raleway', sans-serif;
+}
