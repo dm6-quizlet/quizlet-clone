@@ -125,6 +125,7 @@
   line-height: 3;
   font-weight: 100;
 }
+
 .username {
   height: 80px;
   display: flex;
@@ -132,6 +133,7 @@
   justify-content: center;
   width: 100px;
 }
+
 .dropdown {
   position:absolute;
   z-index: 10;
@@ -140,6 +142,16 @@
   box-shadow: -2px 2px 2.5px 2px #E8E8E8, 2px 2px 2.5px 2px #E8E8E8;
   width: 182px;
   right: 0;
+}
+
+.caret {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: white;
+  right: 0;
+  top: -25px;
+  clip-path: polygon(0 100%, 50% 50%, 100% 100%);
 }
 
 .dropdown li {

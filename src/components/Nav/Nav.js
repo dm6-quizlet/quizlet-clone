@@ -49,21 +49,16 @@ class Nav extends Component {
       <nav className="Nav">
         <div className="container-fluid">
           <Link to="/dashboard" id="quizlet-logo">Quizlet</Link>
-
             <div className="nav-content" ref={navContent => this.navContent = navContent}>
               <div className="nav-search" onClick={this.beginSearch}>
                 <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 <span>Search</span>
               </div>
               <span className="separator">|</span>
-
               <div className="nav-create">
                 <span className="glyphicon glyphicon-th-large" aria-hidden="true"></span>
                 <Link to="/createStudySet">Create</Link>
               </div>
-
-
-
               <div className="nav-login">
               {
                 !this.state.loggedIn
@@ -79,13 +74,14 @@ class Nav extends Component {
                       <div className="username" onClick={this.showDropdown}>Username</div>
                       {this.state.showDropdown
                       ?
-                      <ul className="dropdown" ref={dropdown => this.dropdown = dropdown}>
-                      <li>Your Study Sets</li>
-                      <li>Settings</li>
-                      <li>Log Out</li>
-                      <li className="helpcenter">Help Center</li>
-                      <li>Upgrade</li>
-                      </ul>
+                        <ul className="dropdown" ref={dropdown => this.dropdown = dropdown}>
+                          <div className="caret"></div>
+                          <li>Your Study Sets</li>
+                          <li>Settings</li>
+                          <li>Log Out</li>
+                          <li className="helpcenter">Help Center</li>
+                          <li>Upgrade</li>
+                        </ul>
                       :
                       null
                     }
@@ -95,17 +91,13 @@ class Nav extends Component {
               }
               </div>
             </div>
-
             <div className="new-search" ref= {newSearch => this.newSearch = newSearch}>
               <div className="search-input">
                 <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
                 <input className="search-input-box" type="text" placeholder="Search" />
                 <span onClick={this.endSearch} className="glyphicon glyphicon-remove" aria-hidden="true"></span>
               </div>
-
             </div>
-
-
         </div>
       </nav>
 
