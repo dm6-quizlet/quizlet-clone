@@ -8,12 +8,14 @@ class Nav extends Component {
     super()
     this.state = {
       searchText : '',
-      showModal: false
-
+      showModal: false,
+      loggedIn: true,
+      showDropdown: false
     }
     this.beginSearch = this.beginSearch.bind(this)
     this.endSearch = this.endSearch.bind(this)
     this.showSignup = this.showSignup.bind(this)
+    this.showDropdown = this.showDropdown.bind(this)
   }
 
   // methods
@@ -30,9 +32,14 @@ class Nav extends Component {
   }
 
   showSignup() {
-    console.log("I'm working");
     this.setState({
       showModal: true
+    })
+  }
+
+  showDropdown() {
+    this.setState({
+      showDropdown: !this.state.showDropdown
     })
   }
 
@@ -52,14 +59,40 @@ class Nav extends Component {
 
               <div className="nav-create">
                 <span className="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                <span>Create</span>
+                <Link to="/createStudySet">Create</Link>
               </div>
 
+
+
               <div className="nav-login">
-                <ul>
-                  <li id="navbar-login">Log In</li>
-                  <li><button type="button" className="btn btn-default navbar-btn" id="sign-up-btn" onClick={this.showSignup}>Sign Up</button></li>
-                </ul>
+              {
+                !this.state.loggedIn
+                ?
+                  <ul>
+                    <li id="navbar-login">Log In</li>
+                    <li><button type="button" className="sign-up-btn" onClick={this.showSignup}>Sign Up</button></li>
+                  </ul>
+                :
+                  <ul>
+                    <li><div type="button" className="sign-up-btn">Upgrade to Quizlet Plus</div></li>
+                    <li>
+                      <div className="username" onClick={this.showDropdown}>Username</div>
+                      {this.state.showDropdown
+                      ?
+                      <ul className="dropdown" ref={dropdown => this.dropdown = dropdown}>
+                      <li>Your Study Sets</li>
+                      <li>Settings</li>
+                      <li>Log Out</li>
+                      <li className="helpcenter">Help Center</li>
+                      <li>Upgrade</li>
+                      </ul>
+                      :
+                      null
+                    }
+
+                    </li>
+                  </ul>
+              }
               </div>
             </div>
 

@@ -34,6 +34,10 @@
   color:white;
 }
 
+.nav-create a {
+  color: white;
+}
+
 .nav-search:hover {
   transition: .5s;
   color: #5C6EBC;
@@ -73,7 +77,7 @@
   color: #5C6EBC;
 }
 
-.btn.btn-default.navbar-btn {
+.sign-up-btn {
   background-color: #3DCECF;
   border: none;
   border-radius: 0px;
@@ -83,7 +87,7 @@
   margin-left: 25px;
 }
 
-.btn.btn-default.navbar-btn:hover {
+.sign-up-btn:hover {
   transition: .5s;
   background-color: #FFCD1F;
   color: #6E6E4B;
@@ -115,4 +119,41 @@
   font-size: 20px;
   line-height: 3;
   font-weight: 100;
+}
+.username {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+}
+.dropdown {
+  position:absolute;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 2px 2.5px 2px #E8E8E8, 2px 2px 2.5px 2px #E8E8E8;
+  width: 182px;
+  right: 0;
+}
+
+.dropdown li {
+  height: 40px;
+  width: 182px;
+  text-align: left;
+  margin-left: -39px;
+  color: black;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.dropdown li:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+}
+
+.helpcenter {
+  border-top: 1px solid #E8E8E8;
+  border-bottom: 1px solid #E8E8E8;
 }
