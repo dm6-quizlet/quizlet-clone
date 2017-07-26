@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+// import SignUpModal from './components/SignUpModal/SignUpModal'
 
 import './Nav.css'
 
@@ -11,6 +12,7 @@ class Nav extends Component {
     }
     this.beginSearch = this.beginSearch.bind(this)
     this.endSearch = this.endSearch.bind(this)
+    this.showSignup = this.showSignup.bind(this)
   }
 
   beginSearch() {
@@ -24,13 +26,16 @@ class Nav extends Component {
     window.$(this.navContent).delay(300).fadeIn()
   }
 
+  showSignup() {
+  }
+
   // methods
 
   render() {
     return (
       <nav className="Nav">
         <div className="container-fluid">
-          <a id="quizlet-logo">Quizlet</a>
+          <Link to="/dashboard" id="quizlet-logo">Quizlet</Link>
 
             <div className="nav-content" ref={navContent => this.navContent = navContent}>
               <div className="nav-search" onClick={this.beginSearch}>
@@ -46,7 +51,7 @@ class Nav extends Component {
 
               <div className="nav-login">
                 <ul>
-                  <li id="navbar-login">Log In</li>
+                  <li id="navbar-login" onClick={this.showSignup}>Log In</li>
                   <li><button type="button" className="btn btn-default navbar-btn" id="sign-up-btn">Sign Up</button></li>
                 </ul>
               </div>
