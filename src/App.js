@@ -3,6 +3,7 @@ import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Splash from './components/Splash/Splash'
 import Dashboard from './components/dashboard/Dashboard'
+import SignUpModal from './components/SignUpModal/SignUpModal'
 import './App.css';
 
 class App extends Component {

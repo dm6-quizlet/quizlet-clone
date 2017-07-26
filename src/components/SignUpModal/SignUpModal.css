@@ -1,17 +1,27 @@
-body 
+body
 {
     margin: 0px;
 }
-.UI-Modal-Box
-{
-    left: 50%;
+.UI-Modal-Box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: hsla(0, 0%, 0%, 0.8);
+    z-index: 10;
+    /*left: 50%;
     margin-top: 3rem;
     margin-bottom: 3rem;
     position: relative;
-    width: 37.5rem;
+    width: 37.5rem;*/
 }
-.Sign-Up-Modal-Box 
-{
+.Sign-Up-Modal-Box {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
     padding: 2.5rem 2rem 3.75rem 2rem;
+    background: #fff;
     font-family: 'Raleway', sans-serif;
 }

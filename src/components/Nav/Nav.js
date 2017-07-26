@@ -1,19 +1,22 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
-// import SignUpModal from './components/SignUpModal/SignUpModal'
-
+import SignUpModal from '../SignUpModal/SignUpModal'
 import './Nav.css'
 
 class Nav extends Component {
   constructor () {
     super()
     this.state = {
-      searchText : ''
+      searchText : '',
+      showModal: false
+
     }
     this.beginSearch = this.beginSearch.bind(this)
     this.endSearch = this.endSearch.bind(this)
     this.showSignup = this.showSignup.bind(this)
   }
+
+  // methods
 
   beginSearch() {
     console.log("Searching")
@@ -27,12 +30,15 @@ class Nav extends Component {
   }
 
   showSignup() {
+    console.log("I'm working");
+    this.setState({
+      showModal: true
+    })
   }
-
-  // methods
 
   render() {
     return (
+      <div>
       <nav className="Nav">
         <div className="container-fluid">
           <Link to="/dashboard" id="quizlet-logo">Quizlet</Link>
@@ -51,8 +57,8 @@ class Nav extends Component {
 
               <div className="nav-login">
                 <ul>
-                  <li id="navbar-login" onClick={this.showSignup}>Log In</li>
-                  <li><button type="button" className="btn btn-default navbar-btn" id="sign-up-btn">Sign Up</button></li>
+                  <li id="navbar-login">Log In</li>
+                  <li><button type="button" className="btn btn-default navbar-btn" id="sign-up-btn" onClick={this.showSignup}>Sign Up</button></li>
                 </ul>
               </div>
             </div>
@@ -69,6 +75,11 @@ class Nav extends Component {
 
         </div>
       </nav>
+
+      {
+        this.state.showModal ? <SignUpModal /> : null
+      }
+      </div>
     )
   }
 }
