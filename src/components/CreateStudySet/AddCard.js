@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 class AddCard extends Component {
   constructor(){
     super();
@@ -8,7 +7,6 @@ class AddCard extends Component {
   //     newCard:{}
   //   }
   }
-
 
   // handleSubmit(e){
   //     this.setState({newCard:{
@@ -24,7 +22,9 @@ class AddCard extends Component {
 
   render() {
     return (
+      <div className="AddCard">
           <input type="button" value="Add Card" />
+      </div>
     );
   }
 }
