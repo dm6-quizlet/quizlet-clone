@@ -9,7 +9,7 @@ class Nav extends Component {
     this.state = {
       searchText : '',
       showModal: false,
-      loggedIn: true,
+      loggedIn: false,
       showDropdown: false
     }
     this.beginSearch = this.beginSearch.bind(this)
@@ -48,7 +48,7 @@ class Nav extends Component {
       <div>
       <nav className="Nav">
         <div className="container-fluid">
-          <Link to="/dashboard" id="quizlet-logo">Quizlet</Link>
+          <Link to="/Splash" id="quizlet-logo">Quizlet</Link>
             <div className="nav-content" ref={navContent => this.navContent = navContent}>
               <div className="nav-search" onClick={this.beginSearch}>
                 <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
