@@ -1,0 +1,33 @@
+.CreateStudySet {
+  background-color: #eee;
+  height: 100vh;
+  width: 100vw;
+
+}
+.CSDTitleBlock {
+  background-color: white;
+}
+
+.CSDTitleBlock-content {
+  width: 80vw;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+
+
+.Card {
+    background-color: #fff;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.AddCard {
+    background-color: #fff;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
