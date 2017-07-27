@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import Card from '../Card/Card';
+import Card from './Card';
 
-
-
-
-
-class Cards extends Component {
+class StudySet extends Component {
 // deleteProject(id){
 //   this.props.onDelete(id);
 // }
@@ -24,11 +20,11 @@ class Cards extends Component {
     }*/}
 
     return (
-      <div className="Cards">
+      <div className="StudySet">
         <Card />
       </div>
     );
   }
 }
 
-export default Card;
+export default StudySet;
