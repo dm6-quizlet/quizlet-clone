@@ -21,7 +21,6 @@ class Nav extends Component {
   // methods
 
   beginSearch() {
-    console.log("Searching")
     window.$(this.navContent).fadeOut()
     window.$(this.newSearch).delay(300).fadeIn('slow')
   }
