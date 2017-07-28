@@ -1,0 +1,368 @@
+/*Simple Tools (section 1)*/
+
+.container.simple-tools-container {
+  width: 100%;
+  height:650px;
+  background-image: url('../../assets/images/splash/splash-laptop-desktop.jpg');
+  background-color: #f5f5f5;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0 !important;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.simple-tools-content {
+  text-align: right;
+  max-width: 461px;
+  color: #455358;
+  margin-top: 150px;
+  margin-right: 50%;
+}
+
+.simple-tools-content h1 {
+  font-size: 56px;
+  line-height: 64px;
+}
+
+.simple-tools-content p {
+  font-size: 16px;
+  margin-top: 25px;
+}
+
+.simple-tools-content button {
+  width: 316px;
+  height: 70px;
+  background-color: #3DCECF;
+  border: none;
+  border-radius: 0px;
+  color: white;
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.simple-tools-content button:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+}
+
+/*Meet Quizlet (section 2)*/
+
+.container.meet-quizlet-container {
+  width: 100%;
+  height:600px;
+  background-color: #F0F0F0;
+}
+.container.meet-quizlet-container .row {
+  position: relative;
+}
+
+.meet-quizlet-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 1220px;
+  width: 1220px;
+  height: 400px;
+  margin: 100px auto;
+  background-color: white;
+  box-shadow: -1px 2px 6.5px 2px #D9D9D9, 1px 3px 8.5px 3px #D9D9D9;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+.meet-quizlet-junk-1 {
+  position: absolute;
+  left: 0;
+
+}
+
+.meet-quizlet-junk-2 {
+  position: absolute;
+  right: 0;
+  top: 430px;
+}
+
+.meet-quizlet-info {
+  padding: 6% 80px;
+  margin: 0;
+  max-width: 690px;
+  text-align: left;
+}
+
+.meet-quizlet-info h1 {
+  color: #455358;
+  font-size: 38px;
+}
+
+.meet-quizlet-info p {
+  font-size: 16px;
+}
+
+.learn-more {
+  max-width: 110px;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+}
+
+.learn-more:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
+
+.meet-quizlet-image {
+  min-width: 535px;
+  height: 100%;
+}
+
+.meet-quizlet-image img {
+  width: 100%;
+  height: 100%;
+}
+
+/*Study Sets (section 3)*/
+
+.study-set-container {
+  min-height: 1200px;
+  position: relative;
+  width: 100%;
+}
+
+.study-set-row {
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.study-set-row  h2 {
+  max-width: 438px;
+  color: #455358;
+  font-size: 38px;
+  line-height: 48px;
+  margin: 100px auto;
+}
+
+.study-sets {
+  columns: 3;
+  min-width: 295px;
+  -webkit-columns: 295px;
+  -moz-columns: 295px;
+  columns: 295px;
+  -webkit-column-gap: 35px;
+  -moz-column-gap: 35px;
+  column-gap: 35px;
+}
+
+.make-your-own {
+  width: 100%;
+  height: 270px;
+  border: 5px dashed #3dcecf;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.make-your-own h1 {
+  max-width: 240px;
+  font-size: 30px;
+  line-height: 38px;
+  color: #455358;
+  margin: auto auto;
+}
+
+.study-set-card {
+  height: 100px;
+  box-shadow: -1px 2px 6.5px 2px #D9D9D9, 1px 3px 8.5px 3px #D9D9D9;
+  background: white;
+  padding: 1em;
+  margin-bottom: 1.3em;
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.study-set-button {
+  width: 160px;
+  height: 40px;
+  background-color: #3DCECF;
+  border: none;
+  border-radius: 0px;
+  color: white;
+  font-size: 14px;
+}
+
+.study-set-button:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+}
+
+.get-started-button-container {
+  margin-top: 25px;
+  padding-top: 80px;
+
+}
+
+.study-set-get-started-button {
+  width: 370px;
+  height: 70px;
+  background-color: #3DCECF;
+  border: none;
+  border-radius: 0px;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.study-set-get-started-button:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+}
+
+.study-set-junk-1 {
+  position: absolute;
+  left: 0;
+  top: 86%;
+}
+
+/*Teacher and Student Info (section 4)*/
+
+.container.teacher-and-student-main-container {
+  width: 100%;
+  min-height: 1540px;
+  background-color: #f5f5f5;
+}
+
+.teacher-and-student-row {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+}
+
+.teacher-column {
+  width: 494px;
+  height: 930px;
+  text-align: right;
+  color: #455358;
+  margin-right: 15px;
+}
+
+.study-smarter-container {
+  padding-right: 80px;
+  margin-bottom: 100px;
+}
+
+.study-smarter-container h1 {
+  font-size: 38px;
+  line-height: 48px;
+}
+
+.study-smarter-container p {
+  font-size: 16px;
+  line-height: 26px;
+  padding-left: 75px;
+}
+
+.study-smarter-container .student-link {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+  margin-left: 305px;
+  padding-left: 0;
+}
+
+.student-link:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
+
+.student-column {
+  width: 494px;
+  height: 930px;
+  text-align: left;
+  color: #455358;
+  margin-left: 15px;
+}
+
+.share-knowledge-container {
+  padding-left: 80px;
+}
+
+.share-knowledge-container h1 {
+  font-size: 38px;
+  line-height: 48px;
+  max-width: 330px;
+}
+
+.share-knowledge-container p {
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 330px;
+}
+
+.share-knowledge-container .teacher-link {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+  max-width: 110px;
+
+}
+
+.teacher-link:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
+
+.teacher-image {
+  width: 400px;
+  height: 545px;
+}
+
+.student-image {
+  width: 400px;
+  height: 545px;
+  margin-bottom: 100px;
+}
+
+.mission-info {
+  display: flex;
+  justify-content: center;
+}
+
+.mission-info-left-col {
+  width: 408px;
+  text-align: right;
+  color: #455358;
+  margin-right: 15px;
+}
+
+.mission-info-right-col {
+  width: 408px;
+  text-align: left;
+  color: #455358;
+  margin-left: 15px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.quizlet-mission-link {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+  max-width: 145px;
+}
+
+.quizlet-mission-link:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
