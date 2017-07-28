@@ -1,8 +1,7 @@
-
-export function studySetsReducers(state={studySet:[]}, action) {
+export function studySetsReducers(state={studySets:[]}, action) {
   switch(action.type){
-    case "ADD_TO_STUDY_SET":
-    return {studySet:[...state.studySet, ...action.payload]};
+    case "CREATE_STUDY_SET":
+    return {studySets:[...state.studySets, ...action.payload]};
     break;
   }
   return state
