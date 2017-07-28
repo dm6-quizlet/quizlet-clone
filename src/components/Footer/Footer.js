@@ -9,38 +9,38 @@ class Footer extends Component {
       <div className="container footer-main-container">
         <div className="row row-1">
           <div className="footer-flex-container">
-            <div className="footer-logo">
-              <Link to="/splash">Quizlet</Link>
+            <div className="footer-logo links-container">
+              <Link to="/splash"><strong>Quizlet</strong></Link>
             </div>
-            <div className="footer-features">
+            <div className="footer-features links-container">
               <strong className="features">Features</strong>
-              <Link to='/splash' className="quizlet-live">Quizlet Live</Link>
-              <Link to='/quizletLearn' className="quizlet-learn">Quizlet Learn</Link>
-              <Link to='/splash' className="mobile">Mobile</Link>
-              <Link to='/splash' className="upgrades">Upgrades</Link>
+              <Link to='/splash' className="quizlet-live links">Quizlet Live</Link>
+              <Link to='/quizletLearn' className="quizlet-learn links">Quizlet Learn</Link>
+              <Link to='/splash' className="mobile links">Mobile</Link>
+              <Link to='/splash' className="upgrades links">Upgrades</Link>
             </div>
-            <div className="footer-help">
+            <div className="footer-help links-container">
               <strong className="help">Help</strong>
-              <Link to='/splash' className="help-center">Help Center</Link>
-              <Link to='/splash' className="honor-code">Honor Code</Link>
-              <Link to='/splash' className="community-guidelines">Community Guidelines</Link>
-              <Link to='/students' className="students">Students</Link>
-              <Link to='/teachers' className="teachers">Teachers</Link>
+              <Link to='/splash' className="help-center links">Help Center</Link>
+              <Link to='/splash' className="honor-code links">Honor Code</Link>
+              <Link to='/splash' className="community-guidelines links">Community Guidelines</Link>
+              <Link to='/students' className="students links">Students</Link>
+              <Link to='/teachers' className="teachers links">Teachers</Link>
             </div>
-            <div className="footer-about">
+            <div className="footer-about links-container">
               <strong className="about">About</strong>
-              <Link to='/mission' className="mission">Mission</Link>
-              <Link to='/splash' className="press">Press</Link>
-              <Link to='/splash' className="jobs">Jobs</Link>
-              <Link to='/splash' className="testimonials">Testimonials</Link>
-              <Link to='/splash' className="privacy">Privacy</Link>
-              <Link to='/splash' className="Terms">Terms</Link>
+              <Link to='/mission' className="mission links">Mission</Link>
+              <Link to='/splash' className="press links">Press</Link>
+              <Link to='/splash' className="jobs links">Jobs</Link>
+              <Link to='/splash' className="testimonials links">Testimonials</Link>
+              <Link to='/splash' className="privacy links">Privacy</Link>
+              <Link to='/splash' className="Terms links">Terms</Link>
             </div>
-            <div className="footer-follow-us">
-              <strong className="follow-us">Follow Us</strong>
-              <a href="https://www.facebook.com/quizlet">Facebook IMG</a>
+            <div className="footer-follow-us links-container">
+              <strong className="follow-us links">Follow Us</strong>
+              <a className="links" href="https://www.facebook.com/quizlet">Facebook IMG</a>
               <p>Language</p>
-              <select>
+              <select className="language-selector">
                 <option value="english-usa" selected>English (USA)</option>
                 <option value="deutsh">Deutsh</option>
                 <option value="english-uk">English (UK)</option>
@@ -53,6 +53,7 @@ class Footer extends Component {
         </div>
         <div className="row row-2">
           <div className="footer-copyright">
+            <p>© 2017 Quizlet Inc.</p>
           </div>
         </div>
       </div>
