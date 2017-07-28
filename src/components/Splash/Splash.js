@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
+import Card from '../Card/Card'
 import './Splash.css'
 
 class Splash extends Component {
@@ -49,18 +50,15 @@ class Splash extends Component {
                   </div>
                 </div>
                 <br />
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
-                <div className="study-set-card"></div>
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
+                <Card />
               </div>
               <div className="get-started-button-container">
                 <button className="study-set-get-started-button" onClick={this.props.toggleSignUpModal}>Get started</button>
