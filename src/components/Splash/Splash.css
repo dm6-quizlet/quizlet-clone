@@ -74,6 +74,7 @@
   z-index: 10;
   display: flex;
   justify-content: center;
+  color: #455358;
 }
 
 .meet-quizlet-junk-1 {
@@ -104,17 +105,22 @@
   font-size: 16px;
 }
 
-.learn-more {
+.learn-more  {
   max-width: 110px;
   text-transform: uppercase;
   font-size: 15px;
   line-height: 18px;
   border-bottom: 5px solid #3DCECF;
+  text-decoration: none;
+  color: #455358;
 }
 
-.learn-more:hover {
+
+.learn-more:hover{
+  text-decoration: none;
   transition: .5s;
   border-bottom: 5px solid #FFCD1F;
+  color: #FFCD1F;
 }
 
 .meet-quizlet-image {
@@ -277,11 +283,17 @@
   border-bottom: 5px solid #3DCECF;
   margin-left: 305px;
   padding-left: 0;
+  text-decoration: none;
+  color: #455358;
 }
 
+
+
 .student-link:hover {
+  text-decoration: none;
   transition: .5s;
   border-bottom: 5px solid #FFCD1F;
+  color: #FFCD1F;
 }
 
 .student-column {
@@ -314,12 +326,15 @@
   line-height: 18px;
   border-bottom: 5px solid #3DCECF;
   max-width: 110px;
-
+  text-decoration: none;
+  color: #455358;
 }
 
 .teacher-link:hover {
+  text-decoration: none;
   transition: .5s;
   border-bottom: 5px solid #FFCD1F;
+  color: #FFCD1F;
 }
 
 .teacher-image {
@@ -360,9 +375,13 @@
   line-height: 18px;
   border-bottom: 5px solid #3DCECF;
   max-width: 145px;
+  text-decoration: none;
+  color: #455358;
 }
 
 .quizlet-mission-link:hover {
+  text-decoration: none;
   transition: .5s;
   border-bottom: 5px solid #FFCD1F;
+  color: #FFCD1F;
 }
