@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
 import Card from '../Card/Card'
+import Footer from '../Footer/Footer'
 import './Splash.css'
 
 class Splash extends Component {
@@ -103,6 +104,7 @@ class Splash extends Component {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     )
   }
