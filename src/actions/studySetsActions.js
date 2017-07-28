@@ -1,6 +1,6 @@
-export function addToStudySet(card){
+export function CreateStudySet(studySet){
   return {
-    type:"ADD_TO_STUDY_SET",
-    payload: card
+    type:"ADD_STUDY_SET",
+    payload: studySet
   }
  }
