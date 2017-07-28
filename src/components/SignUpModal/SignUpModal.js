@@ -19,6 +19,18 @@ class SignUpModal extends Component {
     e.preventDefault()
     this.props.toggleSignUpModal()
   }
+  setModal(modalBox) {
+    console.log(modalBox)
+    const body = document.querySelector('body')
+    const bodyStyle = body.style
+    if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
+      bodyStyle.overflow = "hidden"
+      modalBox.style.top = body.scrollTop + 'px'
+      console.log(body.scrollTop)
+    } else if (bodyStyle.overflow === 'hidden') {
+      bodyStyle.overflow = "auto"
+    }
+  }
     render() {
         let checkClass = "fake-checkbox"
         if (this.state.checked) {
@@ -27,17 +39,17 @@ class SignUpModal extends Component {
             checkClass += " unchecked"
         }
         return (
-            <div className="UI-Modal-Box">
+            <div ref={modalBox => this.setModal(modalBox)} className="UI-Modal-Box">
                 <div className="Sign-Up-Modal-Box">
                     <div onClick={this.props.toggleSignUpModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
                     <div><h4 className="Sign-Up-Row">Sign up with: </h4></div>
                     <div className="Google-Facebook-Row-Container"> {/* Sign up with Google and Facebook*/}
                         <button className="Google-Facebook-Row"> Google </button>
                         <button className="Google-Facebook-Row"> Facebook </button>
-                    </div> 
+                    </div>
                     <form onSubmit={this.submitForm}>
                         <h4 className="Sign-Up-Row">Or sign up with email: </h4>
-                        <div> 
+                        <div>
                             <div className="Drop-Down-Menu">
                                 <select className="Drop-Down-Select">
                                     <option value="0">Month</option>
@@ -171,7 +183,7 @@ class SignUpModal extends Component {
                             <div>
                                 <input className="Input-Box" type="text"></input>
                             </div>
-                            
+
                             <span className="Input-Label">
                                 <span>Username</span>
                             </span>
@@ -180,7 +192,7 @@ class SignUpModal extends Component {
                             <div>
                                 <input className="Input-Box" type="text"></input>
                             </div>
-                            
+
                             <span className="Input-Label">
                                 <span>Email</span>
                             </span>
@@ -194,7 +206,7 @@ class SignUpModal extends Component {
                             </span>
                         </label>
                         <div className="TOS-Container">
-                            <label className="Checkbox">    
+                            <label className="Checkbox">
                                 <input type="checkbox" value={this.state.checked} onChange={this.acceptTerms} name="TOS" />
                                 <div className={checkClass}>&#10003;</div>
                                 <div className="fake-label">no color</div>

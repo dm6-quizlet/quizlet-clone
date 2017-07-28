@@ -48,6 +48,11 @@
   color: #5C6EBC;
 }
 
+.nav-create:hover a {
+  transition: .5s;
+  color: #5C6EBC;
+}
+
 .glyphicon {
   padding: 10px;
   font-size: 18px;
