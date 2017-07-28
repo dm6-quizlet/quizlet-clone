@@ -9,22 +9,26 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0 !important;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .simple-tools-content {
   text-align: right;
-  max-width: 490px;
+  max-width: 461px;
   color: #455358;
-  margin-left: 280px;
   margin-top: 150px;
+  margin-right: 50%;
 }
 
 .simple-tools-content h1 {
   font-size: 56px;
+  line-height: 64px;
 }
 
 .simple-tools-content p {
   font-size: 16px;
+  margin-top: 25px;
 }
 
 .simple-tools-content button {
@@ -35,6 +39,7 @@
   border-radius: 0px;
   color: white;
   font-size: 18px;
+  margin-top: 25px;
 }
 
 .simple-tools-content button:hover {
@@ -103,7 +108,13 @@
   max-width: 110px;
   text-transform: uppercase;
   font-size: 15px;
+  line-height: 18px;
   border-bottom: 5px solid #3DCECF;
+}
+
+.learn-more:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
 }
 
 .meet-quizlet-image {
@@ -119,7 +130,14 @@
 /*Study Sets (section 3)*/
 
 .study-set-container {
-  min-height: 1945px;
+  min-height: 1200px;
+  position: relative;
+  width: 100%;
+}
+
+.study-set-row {
+  max-width: 1050px;
+  margin: 0 auto;
 }
 
 .study-set-row  h2 {
@@ -133,7 +151,6 @@
 .study-sets {
   columns: 3;
   min-width: 295px;
-
   -webkit-columns: 295px;
   -moz-columns: 295px;
   columns: 295px;
@@ -207,4 +224,145 @@
   transition: .5s;
   background-color: #FFCD1F;
   color: #6E6E4B;
+}
+
+.study-set-junk-1 {
+  position: absolute;
+  left: 0;
+  top: 86%;
+}
+
+/*Teacher and Student Info (section 4)*/
+
+.container.teacher-and-student-main-container {
+  width: 100%;
+  min-height: 1540px;
+  background-color: #f5f5f5;
+}
+
+.teacher-and-student-row {
+  display: flex;
+  justify-content: center;
+  margin: 100px auto;
+}
+
+.teacher-column {
+  width: 494px;
+  height: 930px;
+  text-align: right;
+  color: #455358;
+  margin-right: 15px;
+}
+
+.study-smarter-container {
+  padding-right: 80px;
+  margin-bottom: 100px;
+}
+
+.study-smarter-container h1 {
+  font-size: 38px;
+  line-height: 48px;
+}
+
+.study-smarter-container p {
+  font-size: 16px;
+  line-height: 26px;
+  padding-left: 75px;
+}
+
+.study-smarter-container .student-link {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+  margin-left: 305px;
+  padding-left: 0;
+}
+
+.student-link:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
+
+.student-column {
+  width: 494px;
+  height: 930px;
+  text-align: left;
+  color: #455358;
+  margin-left: 15px;
+}
+
+.share-knowledge-container {
+  padding-left: 80px;
+}
+
+.share-knowledge-container h1 {
+  font-size: 38px;
+  line-height: 48px;
+  max-width: 330px;
+}
+
+.share-knowledge-container p {
+  font-size: 16px;
+  line-height: 26px;
+  max-width: 330px;
+}
+
+.share-knowledge-container .teacher-link {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+  max-width: 110px;
+
+}
+
+.teacher-link:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
+
+.teacher-image {
+  width: 400px;
+  height: 545px;
+}
+
+.student-image {
+  width: 400px;
+  height: 545px;
+  margin-bottom: 100px;
+}
+
+.mission-info {
+  display: flex;
+  justify-content: center;
+}
+
+.mission-info-left-col {
+  width: 408px;
+  text-align: right;
+  color: #455358;
+  margin-right: 15px;
+}
+
+.mission-info-right-col {
+  width: 408px;
+  text-align: left;
+  color: #455358;
+  margin-left: 15px;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.quizlet-mission-link {
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 18px;
+  border-bottom: 5px solid #3DCECF;
+  max-width: 145px;
+}
+
+.quizlet-mission-link:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
 }

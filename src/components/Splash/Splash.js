@@ -1,19 +1,20 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {toggleSignUpModal} from '../../actions/modal'
 import './Splash.css'
 
 class Splash extends Component {
   render() {
     return (
-      <div>
+      <div className="Splash">
         <div className="splash-container">
           <div className="container simple-tools-container">
-            <div className="row">
-              <div className="col-xs-12 col-md-6 col-md-6 simple-tools-content">
+              <div className="simple-tools-content">
                 <h1>Simple tools for learning anything.</h1>
                 <p>Search millions of study sets or create your own. Improve your grades by studying with flashcards, games and more.</p>
-                <button>Get Started</button>
+                <button onClick={this.props.toggleSignUpModal}>Get Started</button>
               </div>
-            </div>
           </div>
           <div className="container meet-quizlet-container">
             <div className="row">
@@ -67,10 +68,46 @@ class Splash extends Component {
               <img className="study-set-junk-1" src="https://quizlet.com/a/i/homepage/decoration-c.CXbw.png"/>
             </div>
           </div>
+          <div className="container teacher-and-student-main-container">
+            <div className="teacher-student-mission-container">
+              <div className="teacher-and-student-row">
+                <div className="teacher-column">
+                  <div className="study-smarter-container">
+                    <h1>Study smarter</h1>
+                    <p>More than 95% of students who learn with Quizlet improved their grades. See how Quizlet’s simple tools can help you learn anything, from beginning algebra, to AP US History, to college level econometrics — and beyond.</p>
+                    <p className="student-link">I&lsquo;m a student</p>
+                  </div>
+                  <div className="teacher-image-container">
+                    <img className="teacher-image" src="https://quizlet.com/a/i/homepage/teachers.v2UD.jpg" />
+                  </div>
+                </div>
+                <div className="student-column">
+                  <div className="student-image-container">
+                    <img className="student-image" src="https://quizlet.com/a/i/homepage/students.ZdrY.jpg" />
+                  </div>
+                  <div className="share-knowledge-container">
+                    <h1>Share knowledge</h1>
+                    <p>Keep students engaged and motivated with Quizlet. Create your own classroom sets, collaborate with other teachers, play <span className="quizlet-live">Quizlet Live</span>, and give your students materials to help them learn in a more fun and more efficient way.</p>
+                    <p className="teacher-link"><span>I&lsquo;m a teacher</span></p>
+                  </div>
+                </div>
+              </div>
+              <div className="mission-info">
+                <div className="mission-info-left-col">
+                  <h1>Our mission is to help students practice and master whatever they are learning.</h1>
+                </div>
+                <div className="mission-info-right-col">
+                  <p>We do this by making it simple for students and teachers to create and share online learning materials. Quizlet is proud to be the most popular online educational service in the United States, used by more than 20 million students and teachers each month.</p>
+                  <p>Starting with a simple online learning tool, Quizlet today offers tools for students to make flashcards, practice spelling, play learning games, test their knowledge, collaborate with other students, and more.</p>
+                  <p className="quizlet-mission-link">Quizlet&lsquo;s Mission</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
   }
 }
 
-export default Splash
+export default connect(function (){return {}},{toggleSignUpModal})(Splash)

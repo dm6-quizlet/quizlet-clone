@@ -1,13 +1,24 @@
-import React, { Component }from "react";
+import React, { Component }from "react"
+import {connect} from 'react-redux'
+import {toggleSignUpModal} from '../../actions/modal'
 import './SignUpModal.css'
-export default class SignUpModal extends Component {
+class SignUpModal extends Component {
+  constructor(){
+    super()
+    this.submitForm = this.submitForm.bind(this)
+  }
+
+  submitForm(e) {
+    e.preventDefault()
+    this.props.toggleSignUpModal()
+  }
     render() {
         return (
             <div className="UI-Modal-Box">
                 <div className="Sign-Up-Modal-Box">
                     <div>Something</div> {/* Sign up with Google */}
                     <div></div> {/* Sign up with Facebook */}
-                    <form>
+                    <form onSubmit={this.submitForm}>
                         <div> {/*  */}
                             <div></div> {/* Month input */}
                             <div></div> {/* Day input */}
@@ -33,7 +44,7 @@ export default class SignUpModal extends Component {
                             <span></span>
                         </label>
                         <div></div> {/* Terms of Service Checkbox */}
-                        <button></button> {/* Sign up button */}
+                        <input type="submit" value="SignUp"/> {/* Sign up button */}
                         <div></div>
                     </form>
                 </div>
@@ -41,3 +52,5 @@ export default class SignUpModal extends Component {
         )
     }
 }
+
+export default connect(function(){return {}},{toggleSignUpModal})(SignUpModal)
