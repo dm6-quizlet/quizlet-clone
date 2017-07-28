@@ -8,20 +8,213 @@ body
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: hsla(0, 0%, 0%, 0.8);
+    background: hsla(0, 0%, 0%, 0.4);
     z-index: 10;
-    /*left: 50%;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    position: relative;
-    width: 37.5rem;*/
+    
+}
+.Exit-X-Container
+{
+    margin-bottom: 4rem;
+}
+.Exit-X
+{
+    float: right;
+    font-size: 2rem;
+    cursor: pointer;
 }
 .Sign-Up-Modal-Box {
     position: absolute;
-    top: 100px;
+    width: 60rem;
+    top: 7%;
     left: 50%;
     transform: translateX(-50%);
-    padding: 2.5rem 2rem 3.75rem 2rem;
+    padding: 2.5rem 3rem 3.75rem 3rem;
     background: #fff;
-    font-family: 'Raleway', sans-serif;
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+}
+.Sign-Up-Row
+{
+    font-weight: bold;   
+    text-align: left;
+    margin-bottom: 5%;
+}
+.Sign-Up-Close-Button
+{
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+}
+.Google-Facebook-Row-Container
+{
+    display: flex;
+    justify-content: space-between;
+}
+.Google-Facebook-Row
+{  
+    background-color: white;
+    color: #5e5d5d;
+    border: 2px solid #97A4A9;
+    width: 25.5rem;
+    height: 4.5rem;
+    margin-bottom: 4%;
+    outline: none;
+}
+.Drop-Down-Menu
+{
+    border: 0.125rem solid #dadee0;
+    color: #3ccfcf;
+    display: inline-block;
+    padding: 0.625rem 0 0.625rem 1rem;
+    position: relative;
+    padding-right: 2.5rem;
+    
+}
+.Drop-Down-Select
+{
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #3ccfcf;
+    outline: none;
+}
+.Birthday-Title-Container
+{
+    text-align: left;
+    margin-top: .5rem;
+}
+.Birthday-Title
+{
+    color: #97a5aa;
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+}
+.Input
+{
+    margin-top: 3rem;
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 1.3;
+    text-align: left;
+    font: inherit;
+    
+}
+.Input-Box
+{   
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+    font-size: 1.75rem;
+    font-weight: lighter;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+    width: 100%;
+    outline: none;
+    border-bottom: 0.15rem solid #455358;
+    transition: border-bottom .15s;
+}
+.Input-Box:focus {
+    border-bottom: 0.35rem solid #ffcd20;
+}
+.Input-Label
+{
+    color: #97a5aa;
+    display: block;
+    margin-top: 0.625rem;
+    text-align: inherit;
+    
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    line-height: 1.3;
+}
+.TOS-Container
+{
+    margin-top: 2rem;
+}
+.Checkbox
+{
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.Checkbox input {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.Checkbox .fake-checkbox {
+    display: flex;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    border: 0.2rem solid #97a5aa;
+    color: #fff;
+
+}
+.Checkbox .fake-label {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.Checkbox .fake-checkbox.checked {
+    text-align: center;
+
+    border: 0.2rem solid #ffcd1f;
+    color: #ffcd1f;
+}
+.Checkbox .fake-checkbox.unchecked {
+    border: 0.2rem solid #ff725b;
+    color: #fff;
+}
+.Sign-Up-Button
+{   
+    margin-top: 2rem;
+    width: 100%;
+    height: 4.5rem;
+    background-color: #3ccfcf;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.4rem;
+}
+.Sign-Up-Button:hover
+{
+    background-color: #fecc1f;
+    color: #455358;
+    font-weight: 600;
+}
+
+.Bottom-Sign-Up
+{
+    margin-top: 3rem;
+    font-weight: bold;
+}
+.Privacy-Image
+{
+    margin-top: 3rem;
+}
+.No-Spam-Container
+{
+    margin-top: 4rem;
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+.No-Spam
+{
+    color: #c0cace;
+    margin: 0 auto;
+    max-width: 300px;
+    font-weight: 600;
 }
