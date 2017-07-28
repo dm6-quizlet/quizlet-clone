@@ -112,6 +112,11 @@
   border-bottom: 5px solid #3DCECF;
 }
 
+.learn-more:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+}
+
 .meet-quizlet-image {
   min-width: 535px;
   height: 100%;

@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {toggleSignUpModal} from '../../actions/modal'
 import SignUpModal from '../SignUpModal/SignUpModal'
 import './Nav.css'
 
@@ -8,13 +10,11 @@ class Nav extends Component {
     super()
     this.state = {
       searchText : '',
-      showModal: false,
       loggedIn: false,
       showDropdown: false
     }
     this.beginSearch = this.beginSearch.bind(this)
     this.endSearch = this.endSearch.bind(this)
-    this.showSignup = this.showSignup.bind(this)
     this.showDropdown = this.showDropdown.bind(this)
   }
 
@@ -30,16 +30,18 @@ class Nav extends Component {
     window.$(this.navContent).delay(300).fadeIn()
   }
 
-  showSignup() {
-    this.setState({
-      showModal: true
-    })
-  }
-
   showDropdown() {
     this.setState({
       showDropdown: !this.state.showDropdown
     })
+  }
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
   }
 
   render() {
@@ -64,7 +66,7 @@ class Nav extends Component {
                 ?
                   <ul>
                     <li id="navbar-login">Log In</li>
-                    <li><button type="button" className="sign-up-btn" onClick={this.showSignup}>Sign Up</button></li>
+                    <li><button type="button" className="sign-up-btn" onClick={this.props.toggleSignUpModal}>Sign Up</button></li>
                   </ul>
                 :
                   <ul>
@@ -101,11 +103,13 @@ class Nav extends Component {
       </nav>
 
       {
-        this.state.showModal ? <SignUpModal /> : null
+        this.props.showSignUpModal ? <SignUpModal /> : null
       }
       </div>
     )
   }
 }
 
-export default Nav
+export default connect(function(state){return {
+  showSignUpModal: state.modal.showSignUpModal
+}},{toggleSignUpModal})(Nav)

@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {toggleSignUpModal} from '../../actions/modal'
 import './Splash.css'
 
 class Splash extends Component {
   render() {
     return (
-      <div>
+      <div className="Splash">
         <div className="splash-container">
           <div className="container simple-tools-container">
               <div className="simple-tools-content">
                 <h1>Simple tools for learning anything.</h1>
                 <p>Search millions of study sets or create your own. Improve your grades by studying with flashcards, games and more.</p>
-                <button>Get Started</button>
+                <button onClick={this.props.toggleSignUpModal}>Get Started</button>
               </div>
           </div>
           <div className="container meet-quizlet-container">
@@ -107,4 +110,4 @@ class Splash extends Component {
   }
 }
 
-export default Splash
+export default connect(function (){return {}},{toggleSignUpModal})(Splash)
