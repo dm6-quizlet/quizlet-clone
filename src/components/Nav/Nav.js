@@ -35,15 +35,6 @@ class Nav extends Component {
       showDropdown: !this.state.showDropdown
     })
   }
-
-  componentDidMount() {
-    console.log(this.props);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
-
   render() {
     return (
       <div>
