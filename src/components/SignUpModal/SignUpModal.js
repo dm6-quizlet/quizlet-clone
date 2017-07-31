@@ -2,11 +2,17 @@ import React, { Component }from "react"
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
 import './SignUpModal.css'
+import axios from 'axios';
 class SignUpModal extends Component {
   constructor(){
     super()
         this.state = {
-            checked: null
+            checked: null,
+            signUpInput: {
+            	username: '',
+            	email: '',
+            	password: ''
+            }
         }
     this.acceptTerms = this.acceptTerms.bind(this)
     this.submitForm = this.submitForm.bind(this)
@@ -17,8 +23,28 @@ class SignUpModal extends Component {
 
   submitForm(e) {
     e.preventDefault()
+    axios.post('http://localhost:3001/api/users/register', {
+    	username: this.state.signUpInput.username,
+    	email: this.state.signUpInput.email,
+    	password: this.state.signUpInput.password
+
+    })
+      .then(function(response) {
+        console.log(response.data);
+      }) .catch(function (error) {
+        console.log(error);
+      });
     this.props.toggleSignUpModal()
   }
+
+    handleChange(reference, event) {
+      let newInput = this.state.signUpInput;
+      newInput[reference] = event.target.value;
+      this.setState({signUpInput: newInput})
+      console.log(event.target.value)
+      console.log(this.state.signUpInput)
+    }
+
   setModal(modalBox) {
     console.log(modalBox)
     const body = document.querySelector('body')
@@ -44,13 +70,12 @@ class SignUpModal extends Component {
                     <div onClick={this.props.toggleSignUpModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
                     <div><h4 className="Sign-Up-Row">Sign up with: </h4></div>
                     <div className="Google-Facebook-Row-Container"> {/* Sign up with Google and Facebook*/}
-                        <button type="submit" className="Google-Row"><img className = "gf_icons" src= {require('../../assets/images/google-image.png')}/> Google </button>
-                        <button type="submit" className="Facebook-Row"><img className = "gf_icons" src= {require('../../assets/images/icon_facebook.png')}/> Facebook </button>
-                    </div> 
+                        <button className="Google-Facebook-Row"> Google </button>
+                        <button className="Google-Facebook-Row"> Facebook </button>
+                    </div>
                     <form onSubmit={this.submitForm}>
                         <h4 className="Sign-Up-Row">Or sign up with email: </h4>
                         <div>
-                        <div  className = "dates"> 
                             <div className="Drop-Down-Menu">
                                 <select className="Drop-Down-Select">
                                     <option value="0">Month</option>
@@ -175,25 +200,25 @@ class SignUpModal extends Component {
                                     <option value="1951">1951</option>
                                     <option value="1950">1950</option>
                                 </select>
-                            </div>  
-                             </div>  {/* end */}     
-                                                {/* Year input */}
+                            </div>                              {/* Year input */}
                             <div className="Birthday-Title-Container">
                             <span className="Birthday-Title">Birthday</span>
                             </div>
                         </div>
                         <label className="Input"> {/* Username input */}
                             <div>
-                                <input className="Input-Box" type="text"></input>
+                            <div>
+                                <input onChange={this.handleChange.bind(this, 'username')} className="Input-Box" type="text"></input>
                             </div>
 
                             <span className="Input-Label">
                                 <span>Username</span>
                             </span>
+                            </div>
                         </label>
                         <label className="Input"> {/* Email input */}
                             <div>
-                                <input className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'email')} className="Input-Box" type="text"></input>
                             </div>
 
                             <span className="Input-Label">
@@ -202,7 +227,7 @@ class SignUpModal extends Component {
                         </label>
                         <label className="Input"> {/* Password input */}
                             <div>
-                                <input className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
                             </div>
                             <span className="Input-Label">
                                 <span>Password</span>
@@ -218,11 +243,11 @@ class SignUpModal extends Component {
                         <input type="submit" value="Sign Up" className="Sign-Up-Button"/> {/* Sign up button */}
                         <div className="Bottom-Sign-Up"><span>Already have an account? Log in</span></div>
                         <div className="Privacy-Image">
-                            <img src="./assets/images/seal.png" alt="" />
-                        </div> 
+                            <img src="../../../assets/seal.png" />
+                        </div>
                         <div className="No-Spam-Container">
                             <span className="No-Spam">Quizlet will never sell your email information to any third parties. We hate spam just as much as you do.</span>
-                        </div> 
+                        </div>
                         <div></div>
                     </form>
                 </div>
