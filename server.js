@@ -1,15 +1,21 @@
+
 require("dotenv").config();
 const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
+const {json} = require ('body-parser')
 const session = require('express-session');
+const cors = require ('cors')
+const massive = require ('massive')
+const axios = require ('axios')
+
+const app = express();
+
 const passport = require('passport');
 const FacebookStrategy = require('passport-facebook').Strategy;
 //const configAuth = require('./auth.js');
 
 
 // Set Middleware
-app.use(bodyParser.json());
+app.use(json());
 app.use(session({
         secret: process.env.SESSION_SECRET,
         resave: true,
@@ -61,9 +67,23 @@ app.get('/failure', function(req, res, next) {
 })
 
 
+
+///Splash endpoint
+app.get('/api/datasets', (req, res) => {
+  axios.get("https://api.quizlet.com/2.0/users/dadleatherwood/sets?client_id=s4VUDpxjrx&whitespace=1")
+  .then(response => {
+    res.status(200).json(response.data)
+  })
+  .catch(err => {
+    console.log(err);
+  })
+})
+
 app.listen(process.env.PORT,function(){
            console.log(`Listening on ${process.env.PORT}`);
 });
+
+
 
 
 

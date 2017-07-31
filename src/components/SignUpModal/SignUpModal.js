@@ -2,11 +2,17 @@ import React, { Component }from "react"
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
 import './SignUpModal.css'
+import axios from 'axios';
 class SignUpModal extends Component {
   constructor(){
     super()
         this.state = {
-            checked: null
+            checked: null,
+            signUpInput: {
+            	username: '',
+            	email: '',
+            	password: ''
+            }
         }
     this.acceptTerms = this.acceptTerms.bind(this)
     this.submitForm = this.submitForm.bind(this)
@@ -17,8 +23,28 @@ class SignUpModal extends Component {
 
   submitForm(e) {
     e.preventDefault()
+    axios.post('http://localhost:3001/api/users/register', {
+    	username: this.state.signUpInput.username,
+    	email: this.state.signUpInput.email,
+    	password: this.state.signUpInput.password
+
+    })
+      .then(function(response) {
+        console.log(response.data);
+      }) .catch(function (error) {
+        console.log(error);
+      });
     this.props.toggleSignUpModal()
   }
+
+    handleChange(reference, event) {
+      let newInput = this.state.signUpInput;
+      newInput[reference] = event.target.value;
+      this.setState({signUpInput: newInput})
+      console.log(event.target.value)
+      console.log(this.state.signUpInput)
+    }
+
   setModal(modalBox) {
     console.log(modalBox)
     const body = document.querySelector('body')
@@ -181,16 +207,18 @@ class SignUpModal extends Component {
                         </div>
                         <label className="Input"> {/* Username input */}
                             <div>
-                                <input className="Input-Box" type="text"></input>
+                            <div>
+                                <input onChange={this.handleChange.bind(this, 'username')} className="Input-Box" type="text"></input>
                             </div>
 
                             <span className="Input-Label">
                                 <span>Username</span>
                             </span>
+                            </div>
                         </label>
                         <label className="Input"> {/* Email input */}
                             <div>
-                                <input className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'email')} className="Input-Box" type="text"></input>
                             </div>
 
                             <span className="Input-Label">
@@ -199,7 +227,7 @@ class SignUpModal extends Component {
                         </label>
                         <label className="Input"> {/* Password input */}
                             <div>
-                                <input className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
                             </div>
                             <span className="Input-Label">
                                 <span>Password</span>
