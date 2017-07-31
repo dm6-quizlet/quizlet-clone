@@ -4,8 +4,9 @@ import './Card.css'
 class Card extends Component {
   render() {
     return (
-
-      <div className="study-set-card">Test</div>
+      <div className="study-set-card-container">
+        <div className="study-set-card">Test</div>
+      </div>
     )
   }
 }
