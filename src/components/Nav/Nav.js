@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {toggleSignUpModal} from '../../actions/modal'
+import {toggleSignUpModal, toggleSignInModal} from '../../actions/modal'
 import SignUpModal from '../SignUpModal/SignUpModal'
+import SignInModal from '../SignInModal/SignInModal'
 import './Nav.css'
 
 class Nav extends Component {
@@ -41,7 +42,7 @@ class Nav extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+    console.log("Next Props:", nextProps);
   }
 
   render() {
@@ -65,7 +66,7 @@ class Nav extends Component {
                 !this.state.loggedIn
                 ?
                   <ul>
-                    <li id="navbar-login">Log In</li>
+                    <li id="navbar-login" onClick={this.props.toggleSignInModal}>Log In</li>
                     <li><button type="button" className="sign-up-btn" onClick={this.props.toggleSignUpModal}>Sign Up</button></li>
                   </ul>
                 :
@@ -105,11 +106,15 @@ class Nav extends Component {
       {
         this.props.showSignUpModal ? <SignUpModal /> : null
       }
+      {
+        this.props.showSignInModal ? <SignInModal /> : null
+      }
       </div>
     )
   }
 }
 
 export default connect(function(state){return {
-  showSignUpModal: state.modal.showSignUpModal
-}},{toggleSignUpModal})(Nav)
+  showSignUpModal: state.modal.showSignUpModal,
+  showSignInModal: state.modal.showSignInModal
+}},{toggleSignUpModal, toggleSignInModal})(Nav)
