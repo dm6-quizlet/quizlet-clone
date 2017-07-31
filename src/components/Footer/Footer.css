@@ -43,6 +43,11 @@
   font-size: 14px;
 }
 
+.links:hover {
+  transition: .5s;
+  color: #5C6EBC;
+}
+
 .links-container p {
   font-size: 16px;
 }
@@ -59,4 +64,26 @@
 }
 .footer-copyright {
   text-align: left;
+}
+
+.social-links {
+  display: flex;
+  justify-content:flex-start;
+}
+
+.fa {
+  font-size: 16px;
+  margin: 0 10px;
+  border: 2px solid #31438c;
+  border-radius: 50%;
+  padding: 10px 12px;
+}
+
+.fa.fa-facebook {
+  padding: 10px 15px;
+}
+
+.fa:hover {
+  transition: .5s;
+  background-color: #31438c;
 }
