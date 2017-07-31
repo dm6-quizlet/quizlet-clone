@@ -1,0 +1,24 @@
+body 
+{
+    margin: 0px;
+}
+.Modal-Box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: hsla(0, 0%, 0%, 0.4);
+    z-index: 20; 
+}
+.Sign-Up-Modal-Box {
+    position: absolute;
+    width: 60rem;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2.5rem 3rem 3.75rem 3rem;
+    background: #fff;
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+}

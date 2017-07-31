@@ -5,6 +5,7 @@ import Splash from './components/Splash/Splash'
 import Dashboard from './components/Dashboard/Dashboard'
 import SignUpModal from './components/SignUpModal/SignUpModal'
 import CreateStudySet from './components/CreateStudySet/CreateStudySet'
+import SignInModal from './components/SignInModal/SignInModal'
 import './App.css';
 
 class App extends Component {
