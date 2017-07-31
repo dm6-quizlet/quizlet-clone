@@ -58,7 +58,7 @@ class Nav extends Component {
               <span className="separator">|</span>
               <div className="nav-create">
                 <span className="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                <Link to="/createStudySet">Create</Link>
+                <Link to="/create-set">Create</Link>
               </div>
               <div className="nav-login">
               {
