@@ -6,6 +6,10 @@ import Dashboard from './components/Dashboard/Dashboard'
 import SignUpModal from './components/SignUpModal/SignUpModal'
 import CreateStudySet from './components/CreateStudySet/CreateStudySet'
 import SignInModal from './components/SignInModal/SignInModal'
+import QuizletLearn from './components/QuizletLearn/QuizletLearn'
+import Students from './components/Students/Students'
+import Teachers from './components/Teachers/Teachers'
+import Mission from './components/Mission/Mission'
 import './App.css';
 
 class App extends Component {
@@ -16,8 +20,12 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Splash}/>
           <Route exact path='/dashboard' component={Dashboard}/>
-          <Route exact path='/createStudySet' component={CreateStudySet}/>
+          <Route exact path='/create-set' component={CreateStudySet}/>
           <Route exact path='/splash' component={Splash}/>
+          <Route exact path='/quizletLearn' component={QuizletLearn} />
+          <Route exact path='/students' component={Students} />
+          <Route exact path='/teachers' component={Teachers} />
+          <Route exact path='/mission' component={Mission} />
         </Switch>
       </div>
     );

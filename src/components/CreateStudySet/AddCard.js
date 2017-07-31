@@ -1,30 +1,14 @@
 import React, { Component } from 'react';
+import Card from './Card'
+import uuid from 'uuid'
 
 class AddCard extends Component {
-  constructor(){
-    super();
-  //   this.state = {
-  //     newCard:{}
-  //   }
-  }
-
-  // handleSubmit(e){
-  //     this.setState({newCard:{
-  //       id: uuid.v4(),
-  //       term: "",
-  //       definition: "",
-  //
-  //     }}, function(){
-  //       console.log(this.state);
-  //         this.props.addCard(this.state.newCard)
-  //     });
-  //   }
 
   render() {
     return (
-      <div className="AddCard">
-          <input type="button" value="Add Card" />
-      </div>
+          <button {...this.props}>
+            Add Card
+          </button>
     );
   }
 }
