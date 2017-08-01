@@ -8,8 +8,21 @@ class SignInModal extends Component {
     render() {
         return (
             <div className="Modal-Box">
-                <div className="Sign-Up-Modal-Box">
-                    <div onClick={this.props.toggleSignInModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
+                <div className="Sign-In-Modal-Box">
+                    <div className="Modal-Header"> {/* Log In Header */}
+                        <div>
+                            <span>
+                                <div className="Right-Container-Button">
+                                    <div onClick={this.props.toggleSignInModal}><span className="Exit-X-Circle">&#10005;</span></div>
+                                </div>
+                            </span>
+                            <div className="Left-Container-Login">
+                                <div className="">
+                                    <h3> Log In </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <form onSubmit={this.submitForm}>
                         <label className="Input"> {/* Username input */}
                             <div>
