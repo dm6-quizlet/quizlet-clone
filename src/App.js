@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Splash from './components/Splash/Splash'
-import Dashboard from './components/dashboard/Dashboard'
+import Dashboard from './components/Dashboard/Dashboard'
 import SignUpModal from './components/SignUpModal/SignUpModal'
 import CreateStudySet from './components/CreateStudySet/CreateStudySet'
 import SignInModal from './components/SignInModal/SignInModal'
