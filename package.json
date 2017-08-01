@@ -3,15 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "auth0-js": "^8.8.0",
     "axios": "^0.16.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
+    "express-session": "^1.15.4",
     "jsonwebtoken": "^7.4.1",
+    "jwt-decode": "^2.2.0",
+    "massive": "^3.1.0",
+    "material-ui": "^0.18.7",
     "materialize-css": "^0.100.1",
     "mongoose": "^4.11.4",
     "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
     "passport-jwt": "^2.2.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
@@ -33,5 +40,6 @@
     "redux-logger": "^3.0.6"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "proxy": "http://localhost:4000"
 }

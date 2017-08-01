@@ -36,7 +36,6 @@ class SignUpModal extends Component {
       });
     this.props.toggleSignUpModal()
   }
-<<<<<<< HEAD
 
     handleChange(reference, event) {
       let newInput = this.state.signUpInput;
@@ -46,8 +45,6 @@ class SignUpModal extends Component {
       console.log(this.state.signUpInput)
     }
 
-=======
->>>>>>> parent of 92a5f89... fixed merge conflict
   setModal(modalBox) {
     console.log(modalBox)
     const body = document.querySelector('body')
@@ -68,7 +65,7 @@ class SignUpModal extends Component {
             checkClass += " unchecked"
         }
         return (
-            <div ref={modalBox => this.setModal(modalBox)} className="UI-Modal-Box">
+            <div className="UI-Modal-Box">
                 <div className="Sign-Up-Modal-Box">
                     <div onClick={this.props.toggleSignUpModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
                     <div><h4 className="Sign-Up-Row">Sign up with: </h4></div>
@@ -213,7 +210,7 @@ class SignUpModal extends Component {
                             <div>
                                 <input onChange={this.handleChange.bind(this, 'username')} className="Input-Box" type="text"></input>
                             </div>
-
+                            
                             <span className="Input-Label">
                                 <span>Username</span>
                             </span>
@@ -223,7 +220,7 @@ class SignUpModal extends Component {
                             <div>
                                 <input onChange={this.handleChange.bind(this, 'email')} className="Input-Box" type="text"></input>
                             </div>
-
+                            
                             <span className="Input-Label">
                                 <span>Email</span>
                             </span>
@@ -237,7 +234,7 @@ class SignUpModal extends Component {
                             </span>
                         </label>
                         <div className="TOS-Container">
-                            <label className="Checkbox">
+                            <label className="Checkbox">    
                                 <input type="checkbox" value={this.state.checked} onChange={this.acceptTerms} name="TOS" />
                                 <div className={checkClass}>&#10003;</div>
                                 <div className="fake-label">no color</div>
