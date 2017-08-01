@@ -20,7 +20,6 @@ class Splash extends Component {
     fetch('/api/datasets')
     .then(response => response.json())
     .then(res => {
-      console.log(res);
       this.setState({
         studysets: res
       })
