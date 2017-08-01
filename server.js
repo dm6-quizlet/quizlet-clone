@@ -4,7 +4,6 @@ const express = require('express');
 const {json} = require ('body-parser')
 const session = require('express-session');
 const cors = require ('cors')
-const massive = require ('massive')
 const axios = require ('axios')
 
 const app = express();
@@ -20,7 +19,7 @@ app.use(session({
         secret: process.env.SESSION_SECRET,
         resave: true,
         saveUninitialized: true
-        
+
         }));
 
 app.use(passport.initialize());
@@ -82,8 +81,3 @@ app.get('/api/datasets', (req, res) => {
 app.listen(process.env.PORT,function(){
            console.log(`Listening on ${process.env.PORT}`);
 });
-
-
-
-
-

@@ -39,8 +39,8 @@ class Footer extends Component {
             <div className="footer-follow-us links-container">
               <strong className="follow-us links">Follow Us</strong>
               <div className="social-links">
-                <a className="links" href="https://twitter.com/quizlet"><i className="fa fa-twitter" aria-hidden="true"></i></a>
-                <a className="links" href="https://www.facebook.com/quizlet"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                <a className="links" href="https://twitter.com/quizlet"><i className="fa fa-twitter icons" aria-hidden="true"></i></a>
+                <a className="links" href="https://www.facebook.com/quizlet"><i className="fa fa-facebook icons" aria-hidden="true"></i></a>
               </div>
               <p>Language</p>
               <select className="language-selector">
