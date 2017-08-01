@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, Link, Switch, Redirect} from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Splash from './components/Splash/Splash'
-import Dashboard from './components/dashboard/Dashboard'
+import Latest from './components/Latest/Latest'
 import SignUpModal from './components/SignUpModal/SignUpModal'
 import CreateStudySet from './components/CreateStudySet/CreateStudySet'
 import SignInModal from './components/SignInModal/SignInModal'
@@ -19,7 +19,7 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path='/' component={Splash}/>
-          <Route exact path='/dashboard' component={Dashboard}/>
+          <Route exact path='/latest' component={Latest}/>
           <Route exact path='/create-set' component={CreateStudySet}/>
           <Route exact path='/splash' component={Splash}/>
           <Route exact path='/quizletLearn' component={QuizletLearn} />
