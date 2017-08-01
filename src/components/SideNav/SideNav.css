@@ -1,6 +1,6 @@
 .sidenav-main-container {
-  width: 265px;
-  height: 100vh;
+  width: 250px;
+  min-height: 100vh;
   background-color: #fff;
   box-shadow: 0 0.5rem 1.25rem 0 rgba(0,0,0,0.28);
   position:relative;
@@ -62,10 +62,11 @@
 }
 
 .quizletnews-main-container h1 {
-  font-size: 20px;
+  font-size: 18px;
   line-height: 24px;
   text-align: left;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .blog-by {
@@ -74,6 +75,7 @@
   color: #c9cacb;
   text-align: left;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .blog-post {
@@ -81,6 +83,7 @@
   line-height: 28px;
   text-align: left;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .sidenav-footer-container {
