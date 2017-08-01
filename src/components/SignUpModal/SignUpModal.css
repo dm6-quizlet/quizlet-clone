@@ -51,7 +51,7 @@ body
     display: flex;
     justify-content: space-between;
 }
-.Google-Row
+.Google-Facebook-Row
 {  
     background-color: white;
     color: #5e5d5d;
@@ -60,7 +60,6 @@ body
     height: 4.5rem;
     margin-bottom: 4%;
     outline: none;
-    
 }
 .gf_icons {
     width: 13%;
@@ -74,7 +73,6 @@ body
     height: 4.5rem;
     margin-bottom: 4%;
     outline: none;
-    
 }
 .Drop-Down-Menu
 {
@@ -84,7 +82,7 @@ body
     padding: 0.625rem 0 0.625rem 1rem;
     position: relative;
     padding-right: 2.5rem;
-    margin-right: 1rem;
+    
 }
 .Drop-Down-Select
 {
@@ -132,11 +130,6 @@ body
 }
 .Input-Box:focus {
     border-bottom: 0.35rem solid #ffcd20;
-}
-.dates
-{
-    display: flex;
-    justify-content: flex-start;
 }
 .Input-Label
 {
