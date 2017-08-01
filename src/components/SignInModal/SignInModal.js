@@ -35,7 +35,6 @@ class SignInModal extends Component {
 
   storeUserData(token, user){
   localStorage.setItem('id_token', token);
-  localStorage.setItem('user', JSON.stringify(user));
   this.props.setUser(user)
 }
 
