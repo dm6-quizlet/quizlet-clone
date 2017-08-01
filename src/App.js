@@ -10,6 +10,7 @@ import QuizletLearn from './components/QuizletLearn/QuizletLearn'
 import Students from './components/Students/Students'
 import Teachers from './components/Teachers/Teachers'
 import Mission from './components/Mission/Mission'
+import {isLoggedIn} from './services/AuthService'
 import './App.css';
 
 class App extends Component {
@@ -19,7 +20,13 @@ class App extends Component {
         <Nav />
         <Switch>
           <Route exact path='/' component={Splash}/>
-          <Route exact path='/latest' component={Dashboard}/>
+          <Route exact path='/latest' render={() => {
+            if (isLoggedIn()) {
+              return <Dashboard />
+            } else {
+              return <Redirect to="/" />
+            }
+          }}/>
           <Route exact path='/create-set' component={CreateStudySet}/>
           <Route exact path='/splash' component={Splash}/>
           <Route exact path='/quizletLearn' component={QuizletLearn} />

@@ -5,6 +5,7 @@ import {toggleSignInModal} from '../../actions/modal'
 import '../SignUpModal/SignUpModal.css'
 import axios from 'axios';
 import './SignInModal.css'
+import {setUser} from '../../actions/auth'
 
 class SignInModal extends Component {
   constructor() {
@@ -35,8 +36,7 @@ class SignInModal extends Component {
   storeUserData(token, user){
   localStorage.setItem('id_token', token);
   localStorage.setItem('user', JSON.stringify(user));
-  this.state.authToken = token;
-  this.state.user = user;
+  this.props.setUser(user)
 }
 
 
@@ -99,4 +99,4 @@ class SignInModal extends Component {
         )
     }
 }
-export default connect(function(){return {}}, {toggleSignInModal})(SignInModal)
+export default connect(function(){return {}}, {toggleSignInModal, setUser})(SignInModal)
