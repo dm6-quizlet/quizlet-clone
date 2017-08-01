@@ -66,11 +66,22 @@ class SignInModal extends Component {
     console.log(this.state.signInInput)
   }
 
+  setModal(modalBox) {
+    const body = document.querySelector('body')
+    const bodyStyle = body.style
+    if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
+      bodyStyle.overflow = "hidden"
+      modalBox.style.top = body.scrollTop + 'px'
+      console.log(body.scrollTop)
+    } else if (bodyStyle.overflow === 'hidden') {
+      bodyStyle.overflow = "auto"
+    }
+  }
 
     render() {
 
         return (
-            <div className="Modal-Box">
+            <div className="Modal-Box" ref={modalBox => this.setModal(modalBox)}>
                 <div className="Sign-Up-Modal-Box">
                     <div onClick={this.props.toggleSignInModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
                     <form onSubmit={this.submitForm}>

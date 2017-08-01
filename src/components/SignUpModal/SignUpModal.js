@@ -46,7 +46,6 @@ class SignUpModal extends Component {
     }
 
   setModal(modalBox) {
-    console.log(modalBox)
     const body = document.querySelector('body')
     const bodyStyle = body.style
     if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
@@ -65,7 +64,7 @@ class SignUpModal extends Component {
             checkClass += " unchecked"
         }
         return (
-            <div className="UI-Modal-Box">
+            <div className="UI-Modal-Box" ref={modalBox => this.setModal(modalBox)}>
                 <div className="Sign-Up-Modal-Box">
                     <div onClick={this.props.toggleSignUpModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
                     <div><h4 className="Sign-Up-Row">Sign up with: </h4></div>
