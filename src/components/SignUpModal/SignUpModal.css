@@ -22,7 +22,6 @@ body
     float: right;
     font-size: 2rem;
     cursor: pointer;
-
 }
 .Sign-Up-Modal-Box {
     position: absolute;
@@ -63,12 +62,9 @@ body
     outline: none;
     
 }
-
 .gf_icons {
     width: 13%;
 }
-
-
 .Facebook-Row
 {  
     background-color: white;
