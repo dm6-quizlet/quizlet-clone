@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import {toggleSignUpModal, toggleSignInModal} from '../../actions/modal'
 import SignUpModal from '../SignUpModal/SignUpModal'
 import SignInModal from '../SignInModal/SignInModal'
+import { login, logout, isLoggedIn } from '../../services/AuthService';
+
 import './Nav.css'
 
 class Nav extends Component {
@@ -63,7 +65,7 @@ class Nav extends Component {
               </div>
               <div className="nav-login">
               {
-                !this.state.loggedIn
+                !isLoggedIn()
                 ?
                   <ul>
                     <li id="navbar-login" onClick={this.props.toggleSignInModal}>Log In</li>
@@ -80,7 +82,7 @@ class Nav extends Component {
                           <div className="caret"></div>
                           <li>Your Study Sets</li>
                           <li>Settings</li>
-                          <li>Log Out</li>
+                          <li onClick={logout}>Log Out</li>
                           <li className="helpcenter">Help Center</li>
                           <li>Upgrade</li>
                         </ul>

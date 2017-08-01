@@ -150,6 +150,7 @@
 }
 
 .caret {
+  z-index: 10;
   position: absolute;
   width: 25px;
   height: 25px;
@@ -167,6 +168,8 @@
   color: black;
   padding-left: 15px;
   padding-top: 10px;
+  z-index: 20;
+  background-color: white;
 }
 
 .dropdown li:hover {
