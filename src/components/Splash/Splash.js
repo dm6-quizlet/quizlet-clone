@@ -7,7 +7,45 @@ import Footer from '../Footer/Footer'
 import './Splash.css'
 
 class Splash extends Component {
+  constructor () {
+    super()
+    this.state = {
+      studysets: [],
+
+    }
+
+  }
+
+  componentWillMount () {
+    fetch('/api/datasets')
+    .then(response => response.json())
+    .then(res => {
+      console.log(res);
+      this.setState({
+        studysets: res
+      })
+    })
+  }
+
   render() {
+    const studySetCards = this.state.studysets.map(set => {
+      let image;
+      if (set.terms && set.terms.length) {
+        let termWithImage = set.terms.find(term => term.image && term.image.url)
+        if (termWithImage) {
+          image = termWithImage.image.url
+        }
+      }
+      return (
+        <Card
+        key={set.id}
+        title={set.title}
+        created_by={set.created_by}
+        term_count={set.term_count}
+        image={image}
+        />
+      )
+    })
     return (
       <div className="Splash">
         <div className="splash-container">
@@ -15,6 +53,8 @@ class Splash extends Component {
               <div className="simple-tools-content">
                 <h1>Simple tools for learning anything.</h1>
                 <p>Search millions of study sets or create your own. Improve your grades by studying with flashcards, games and more.</p>
+                <h1>{this.state.title}</h1>
+
                 <button onClick={this.props.toggleSignUpModal}>Get Started</button>
               </div>
           </div>
@@ -51,15 +91,7 @@ class Splash extends Component {
                   </div>
                 </div>
                 <br />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+                {studySetCards}
               </div>
               <div className="get-started-button-container">
                 <button className="study-set-get-started-button" onClick={this.props.toggleSignUpModal}>Get started</button>
