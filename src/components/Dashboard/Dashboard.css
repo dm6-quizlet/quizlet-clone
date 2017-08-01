@@ -1,0 +1,13 @@
+.latest-content-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.latest-activity-container {
+  margin-left: 25px;
+}
+
+.latest-activity-row {
+  display: flex;
+  justify-content: space-between;
+}
