@@ -84,7 +84,7 @@ class SignInModal extends Component {
                         </label>
                         <label className="Input"> {/* Password input */}
                             <div>
-                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
                             </div>
                             <span className="Input-Label">
                                 <span>Password</span>
