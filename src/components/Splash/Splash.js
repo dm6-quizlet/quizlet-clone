@@ -17,7 +17,7 @@ class Splash extends Component {
   }
 
   componentWillMount () {
-    fetch('/api/datasets')
+    fetch('http://localhost:3001/api/studysets')
     .then(response => response.json())
     .then(res => {
       this.setState({
@@ -28,20 +28,13 @@ class Splash extends Component {
 
   render() {
     const studySetCards = this.state.studysets.map(set => {
-      let image;
-      if (set.terms && set.terms.length) {
-        let termWithImage = set.terms.find(term => term.image && term.image.url)
-        if (termWithImage) {
-          image = termWithImage.image.url
-        }
-      }
       return (
         <Card
         key={set.id}
         title={set.title}
         created_by={set.created_by}
         term_count={set.term_count}
-        image={image}
+        image={set.image_url}
         />
       )
     })

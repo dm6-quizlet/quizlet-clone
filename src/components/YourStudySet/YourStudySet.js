@@ -3,7 +3,19 @@ import DashboardFeedGroup from '../DashboardFeedGroup/DashboardFeedGroup'
 import './YourStudySet.css'
 
 class YourStudySet extends Component {
+  constructor () {
+    super()
+    this.state = {
+      studysets : [],
+      user : {}
+    }
+  }
+
   render(){
+
+    const studysets = this.state.studysets.map(set => {
+
+    })
     return (
       <div className="main-container">
         <div className="header-main-container">
