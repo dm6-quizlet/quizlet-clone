@@ -29,6 +29,7 @@ class App extends Component {
           }}/>
           <Route exact path='/create-set' component={CreateStudySet}/>
           <Route exact path='/splash' component={Splash}/>
+          <Route exact path="/dashboard" component={Dashboard}/>
           <Route exact path='/quizletLearn' component={QuizletLearn} />
           <Route exact path='/students' component={Students} />
           <Route exact path='/teachers' component={Teachers} />

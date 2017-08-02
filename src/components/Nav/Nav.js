@@ -44,9 +44,8 @@ class Nav extends Component {
     logout()
     this.props.removeUser()
   }
-  
+
   render() {
-    console.log(this.props);
     return (
       <div>
       <nav className="Nav">

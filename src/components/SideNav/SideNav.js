@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 import './SideNav.css'
 
 class SideNav extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="container sidenav-main-container">
         <div className="sidenav-content-container">
