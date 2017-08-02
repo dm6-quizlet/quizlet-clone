@@ -17,8 +17,12 @@ class SignInModal extends Component {
           password: ''
         }
       }
+      this.acceptTerms = this.acceptTerms.bind(this)
       this.submitForm = this.submitForm.bind(this)
   }
+  acceptTerms() {
+        this.setState({checked: !this.state.checked})
+    }
 
   clearIdToken() {
     localStorage.removeItem('id_token');
@@ -65,34 +69,68 @@ class SignInModal extends Component {
     console.log(this.state.signInInput)
   }
 
+  setModal(modalBox) {
+    const body = document.querySelector('body')
+    const bodyStyle = body.style
+    if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
+      bodyStyle.overflow = "hidden"
+      modalBox.style.top = body.scrollTop + 'px'
+      console.log(body.scrollTop)
+    } else if (bodyStyle.overflow === 'hidden') {
+      bodyStyle.overflow = "auto"
+    }
+  }
 
     render() {
-
+        let checkClass = "fake-checkbox"
+        if (this.state.checked) {
+            checkClass += " checked"
+        } else if (this.state.checked === false) {
+            checkClass += " unchecked"
+        }
         return (
-            <div className="Modal-Box">
+            <div className="Modal-Box" ref={modalBox => this.setModal(modalBox)}>
                 <div className="Sign-Up-Modal-Box">
                     <div onClick={this.props.toggleSignInModal} className="Exit-X-Container"><span className="Exit-X">&#10005;</span></div>
-                    <form onSubmit={this.submitForm}>
+                    <div>
+                      <form onSubmit={this.submitForm}>
+                        <div>
+                          <button className="Log-In-Google-Button"></button>
+                          <button className="Log-In-Facebook-Button"></button>
+                        </div>
                         <label className="Input"> {/* Username input */}
                             <div>
-                                <input onChange={this.handleChange.bind(this, 'username')} className="Input-Box" type="text"></input>
+                              <input onChange={this.handleChange.bind(this, 'username')} className="Input-Box" type="text"></input>
                             </div>
-
                             <span className="Input-Label">
-                                <span>Username</span>
+                              <span>Username</span>
                             </span>
                         </label>
                         <label className="Input"> {/* Password input */}
-                            <div>
-                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
-                            </div>
-                            <span className="Input-Label">
-                                <span>Password</span>
-                            </span>
+                          <div>
+                            <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
+                          </div>
+                          <span className="Input-Label">
+                            <span>Password</span>
+                          </span>
                         </label>
-                        <input type="submit" value="Sign in" className="Sign-Up-Button"/> {/* Sign up button */}
-                        <input type="button" onClick={this.signOff} value="Sign Out" className="Sign-Up-Button"/> {/* Sign up button */}
-                    </form>
+                        <div className="Log-In-Button-Container">
+                          <input type="submit" value="Log in" className="Log-In-Button"/> {/* Sign up button */}
+                        </div>
+                        <div className="Logged-In-Container">
+                            <label className="Checkbox">    
+                                <input type="checkbox" value={this.state.checked} onChange={this.acceptTerms} name="TOS" />
+                                <div className={checkClass}>&#10003;</div>
+                                <div className="fake-label">Keep me logged in
+                                </div>
+                                
+                            </label>
+                            <div className="Align-Right-Forgot">
+                                <div className="Forgot-Password">Forgot password?</div>
+                            </div>
+                        </div>
+                      </form>
+                    </div>
                 </div>
             </div>
         )
