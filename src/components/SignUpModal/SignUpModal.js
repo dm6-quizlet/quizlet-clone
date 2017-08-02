@@ -75,6 +75,7 @@ class SignUpModal extends Component {
                     <form onSubmit={this.submitForm}>
                         <h4 className="Sign-Up-Row">Or sign up with email: </h4>
                         <div>
+                        <div className="dates">
                             <div className="Drop-Down-Menu">
                                  <select className="Drop-Down-Select">
                                      <option value="0">Month</option>
@@ -199,6 +200,7 @@ class SignUpModal extends Component {
                                      <option value="1951">1951</option>
                                      <option value="1950">1950</option>
                                  </select>
+                            </div>
                             </div>                              {/* Year input */}
                             <div className="Birthday-Title-Container">
                             <span className="Birthday-Title">Birthday</span>
@@ -242,7 +244,7 @@ class SignUpModal extends Component {
                         <input type="submit" value="Sign Up" className="Sign-Up-Button"/> {/* Sign up button */}
                         <div className="Bottom-Sign-Up"><span>Already have an account? Log in</span></div>
                         <div className="Privacy-Image">
-                            <img src="../../../assets/seal.png" />
+                            <img src={require('../../assets/images/seal.png')} />
                         </div>
                         <div className="No-Spam-Container">
                             <span className="No-Spam">Quizlet will never sell your email information to any third parties. We hate spam just as much as you do.</span>
