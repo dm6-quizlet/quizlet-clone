@@ -70,14 +70,14 @@ class CreateStudySet extends Component {
 
   }
 
-<<<<<<< HEAD
+
   componentDidMount() {
     if (!this.props.userId) {
       console.log("No user")
       this.props.toggleSignInModal()
     }
   }
-=======
+
 
   rotateVisibilitySettings(e) {
     let arr = ['Everyone', 'Certain classes','People with a password']
@@ -105,7 +105,7 @@ class CreateStudySet extends Component {
 
 
 
->>>>>>> master
+
   handleSubmit(e) {
     e.preventDefault()
     let _this = this.state.studysetObject;

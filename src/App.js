@@ -9,6 +9,9 @@ import QuizletLearn from './components/QuizletLearn/QuizletLearn'
 import Students from './components/Students/Students'
 import Teachers from './components/Teachers/Teachers'
 import Mission from './components/Mission/Mission'
+import Match from './components/Match/Match'
+import Flashcard from './components/Flashcard/Flashcard'
+import StudySet from './components/StudySet/StudySet'
 import './App.css';
 
 class App extends Component {
