@@ -1,0 +1,8 @@
+.dashboard-content-container {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dashboard-activity-container {
+  margin-left: 25px;
+}

@@ -1,0 +1,100 @@
+.sidenav-main-container {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1.25rem 0 rgba(0,0,0,0.28);
+  position:relative;
+  z-index: 200;
+  color: #455358;
+  padding:0;
+}
+
+.sidenav-containers {
+  border-bottom: 1px solid #E8E8E8;
+  padding: 18px 0;
+}
+
+.sidenav-containers i {
+  color: #3DCECF;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.content-containers {
+  display: flex;
+  justify-content:flex-start;
+  height: 38px;
+  width: 100%;
+  padding: 10px;
+}
+
+.content-containers:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+}
+
+.content-containers:hover i {
+  color: #455358;
+}
+
+.title {
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+  color: #c9cacb;
+}
+
+.sidenav-quizletnews-container {
+  margin-top: 15px;
+}
+
+.quizletnews-image {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.quizletnews-main-container {
+  border-bottom: 1px solid #E8E8E8;
+  padding: 18px 0;
+}
+
+.quizletnews-main-container h1 {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.blog-by {
+  font-size: 12px;
+  line-height: 16px;
+  color: #c9cacb;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.blog-post {
+  font-size: 15px;
+  line-height: 28px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.sidenav-footer-container {
+  text-align: left;
+  color: #3DCECF;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 20px;
+}
+
+.footer-container:hover {
+  transition: .5s;
+  color: #FFCD1F;
+}

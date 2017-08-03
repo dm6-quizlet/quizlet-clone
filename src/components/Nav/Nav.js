@@ -5,7 +5,7 @@ import {toggleSignUpModal, toggleSignInModal} from '../../actions/modal'
 import SignUpModal from '../SignUpModal/SignUpModal'
 import SignInModal from '../SignInModal/SignInModal'
 import { login, logout, isLoggedIn } from '../../services/AuthService';
-
+import {removeUser} from '../../actions/auth'
 import './Nav.css'
 
 class Nav extends Component {
@@ -19,6 +19,7 @@ class Nav extends Component {
     this.beginSearch = this.beginSearch.bind(this)
     this.endSearch = this.endSearch.bind(this)
     this.showDropdown = this.showDropdown.bind(this)
+    this.logout = this.logout.bind(this)
   }
 
   // methods
@@ -38,6 +39,12 @@ class Nav extends Component {
       showDropdown: !this.state.showDropdown
     })
   }
+
+  logout() {
+    logout()
+    this.props.removeUser()
+  }
+
   render() {
     return (
       <div>
@@ -66,14 +73,14 @@ class Nav extends Component {
                   <ul>
                     <li><div type="button" className="sign-up-btn" id="upgrade-btn">Upgrade to Quizlet Plus</div></li>
                     <li>
-                      <div className="username" onClick={this.showDropdown}>Username</div>
+                      <div className="username" onClick={this.showDropdown}>{this.props.user.username}</div>
                       {this.state.showDropdown
                       ?
                         <ul className="dropdown" ref={dropdown => this.dropdown = dropdown}>
                           <div className="caret"></div>
                           <li>Your Study Sets</li>
                           <li>Settings</li>
-                          <li onClick={logout}>Log Out</li>
+                          <li onClick={this.logout}>Log Out</li>
                           <li className="helpcenter">Help Center</li>
                           <li>Upgrade</li>
                         </ul>
@@ -108,6 +115,8 @@ class Nav extends Component {
 }
 
 export default connect(function(state){return {
+  loggedIn: state.auth.loggedIn,
+  user: state.auth.user,
   showSignUpModal: state.modal.showSignUpModal,
   showSignInModal: state.modal.showSignInModal
-}},{toggleSignUpModal, toggleSignInModal})(Nav)
+}},{toggleSignUpModal, toggleSignInModal, removeUser})(Nav)

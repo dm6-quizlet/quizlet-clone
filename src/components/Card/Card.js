@@ -3,7 +3,6 @@ import './Card.css'
 
 class Card extends Component {
   render() {
-    console.log(this.props)
     return (
       <div className="study-set-card-container">
         <div className="study-set-card">

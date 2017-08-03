@@ -23,7 +23,7 @@ class SignUpModal extends Component {
 
   submitForm(e) {
     e.preventDefault()
-    axios.post('http:localhost:3001/api/users/register', {
+    axios.post('http://localhost:3001/api/users/register', {
     	username: this.state.signUpInput.username,
     	email: this.state.signUpInput.email,
     	password: this.state.signUpInput.password
@@ -41,8 +41,6 @@ class SignUpModal extends Component {
       let newInput = this.state.signUpInput;
       newInput[reference] = event.target.value;
       this.setState({signUpInput: newInput})
-      console.log(event.target.value)
-      console.log(this.state.signUpInput)
     }
 
   setModal(modalBox) {
@@ -71,7 +69,7 @@ class SignUpModal extends Component {
                     <div className="Google-Facebook-Row-Container"> {/* Sign up with Google and Facebook*/}
                         <button type="submit" className="Google-Row"><img className = "gf_icons" src= {require('../../assets/images/google-image.png')}/> Google </button>
                         <button type="submit" className="Facebook-Row"><img className = "gf_icons" src= {require('../../assets/images/icon_facebook.png')}/> Facebook </button>
-                    </div> 
+                    </div>
                     <form onSubmit={this.submitForm}>
                         <h4 className="Sign-Up-Row">Or sign up with email: </h4>
                         <div>
@@ -211,7 +209,7 @@ class SignUpModal extends Component {
                             <div>
                                 <input onChange={this.handleChange.bind(this, 'username')} className="Input-Box" type="text"></input>
                             </div>
-                            
+
                             <span className="Input-Label">
                                 <span>Username</span>
                             </span>
@@ -221,7 +219,7 @@ class SignUpModal extends Component {
                             <div>
                                 <input onChange={this.handleChange.bind(this, 'email')} className="Input-Box" type="text"></input>
                             </div>
-                            
+
                             <span className="Input-Label">
                                 <span>Email</span>
                             </span>
@@ -235,7 +233,7 @@ class SignUpModal extends Component {
                             </span>
                         </label>
                         <div className="TOS-Container">
-                            <label className="Checkbox">    
+                            <label className="Checkbox">
                                 <input type="checkbox" value={this.state.checked} onChange={this.acceptTerms} name="TOS" />
                                 <div className={checkClass}>&#10003;</div>
                                 <div className="fake-label">no color</div>
