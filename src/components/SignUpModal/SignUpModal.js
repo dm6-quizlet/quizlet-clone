@@ -49,7 +49,6 @@ class SignUpModal extends Component {
     if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
       bodyStyle.overflow = "hidden"
       modalBox.style.top = body.scrollTop + 'px'
-      console.log(body.scrollTop)
     } else if (bodyStyle.overflow === 'hidden') {
       bodyStyle.overflow = "auto"
     }

@@ -1,9 +1,39 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+import {BASE_URL} from '../../services/AuthService'
+import {connect} from 'react-redux'
 import './SideNav.css'
 
 class SideNav extends Component {
+  constructor() {
+    super()
+    this.state = {
+      folders: []
+    }
+  }
+
+  componentDidMount() {
+    axios.get(BASE_URL + '/api/folders/' + this.props.userId)
+    .then(response => response.data)
+    .then(folders => {
+      this.setState({
+        folders
+      })
+    })
+  }
+
   render() {
+
+    const folders = this.state.folders.map(folder => {
+      return (
+        <div key={folder._id} onClick={() => {this.props.selectFolder(folder)}}>
+          {folder.title}
+
+        </div>
+      )
+    })
+
     return (
       <div className="container sidenav-main-container">
         <div className="sidenav-content-container">
@@ -30,6 +60,7 @@ class SideNav extends Component {
           </div>
           <div className="sidenav-content-containers sidenav-containers">
             <p className="title">Your Folders</p>
+            {folders}
             <div className="content-containers">
               <i className="fa fa-folder-open" aria-hidden="true"></i>
               <p>Create a folder</p>
@@ -66,4 +97,10 @@ class SideNav extends Component {
   }
 }
 
-export default SideNav
+function mapStateToProps(state) {
+  return {
+    userId: state.auth.user.id
+  }
+}
+
+export default connect(mapStateToProps)(SideNav)

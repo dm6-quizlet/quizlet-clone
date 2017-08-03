@@ -163,7 +163,7 @@
   -webkit-column-gap: 35px;
   -moz-column-gap: 35px;
   column-gap: 35px;
-
+  height: 100vh;
 }
 
 .make-your-own {
@@ -173,6 +173,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 10px 0;
 }
 
 .make-your-own h1 {
@@ -200,7 +201,7 @@
 }
 
 .get-started-button-container {
-  margin-top: 25px;
+  margin: 100px 0;
   padding-top: 80px;
 
 }
@@ -225,7 +226,7 @@
 .study-set-junk-1 {
   position: absolute;
   left: 0;
-  top: 86%;
+  top: 90%;
 }
 
 /*Teacher and Student Info (section 4)*/
