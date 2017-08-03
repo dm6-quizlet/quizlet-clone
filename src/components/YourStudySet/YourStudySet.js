@@ -1,33 +1,61 @@
 import React, {Component} from 'react'
 import DashboardFeedGroup from '../DashboardFeedGroup/DashboardFeedGroup'
+import Card from '../Card/Card'
 import './YourStudySet.css'
-
+import axios from 'axios'
+import {BASE_URL} from '../../services/AuthService'
+import {connect} from 'react-redux'
 class YourStudySet extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {
-      studysets : [],
-      user : {}
+      studysets : []
     }
+  }
+
+  componentDidMount() {
+    axios.get(BASE_URL + '/api/studysets/' + this.props.user.id)
+    .then(response => response.data.studyset)
+    .then(studysets => {
+      this.setState({
+        studysets
+      })
+    })
   }
 
   render(){
 
-    const studysets = this.state.studysets.map(set => {
-
+    let studysets = this.state.studysets.map(set => {
+      return set
     })
+
+    if (this.props.folder) {
+      studysets = studysets.filter(studyset => {
+        return this.props.folder.studysets.indexOf(studyset._id) > -1
+      })
+    }
+    console.log(studysets)
+    const cards = studysets.map(set => (
+      <div className="studyset-card" key={set.id}>
+      <Card key={set._id}
+        title={set.title}
+        created_by={set.userId.username}
+        term_count={set.cards.length}
+      />
+      </div>
+    ))
     return (
       <div className="main-container">
         <div className="header-main-container">
           <div className="header-container">
             <div className="profile-container">
               <div className="profile-image-container">
-                <img className="profile-image"/>
+                  {this.props.user.image_url ? <img src={this.props.user.image_url} className="profile-image"/> : null}
               </div>
               <div className="profile-content-container">
                 <div className="headline-row">
                   <div className="username-container">
-                    {/*USERNAME*/}
+                    {this.props.user.username}
                   </div>
                   <div className="user-info-container">
                     <div className="user-type-container">
@@ -69,6 +97,7 @@ class YourStudySet extends Component {
             </div>
             <div className="dashboard-feed-main-container">
               <DashboardFeedGroup />
+              {cards}
             </div>
           </div>
         </div>
@@ -78,4 +107,6 @@ class YourStudySet extends Component {
   }
 }
 
-export default YourStudySet
+export default connect(function(state){return {
+  user: state.auth.user
+}},{})(YourStudySet)

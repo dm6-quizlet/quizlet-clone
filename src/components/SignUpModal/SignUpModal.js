@@ -49,7 +49,6 @@ class SignUpModal extends Component {
     if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
       bodyStyle.overflow = "hidden"
       modalBox.style.top = body.scrollTop + 'px'
-      console.log(body.scrollTop)
     } else if (bodyStyle.overflow === 'hidden') {
       bodyStyle.overflow = "auto"
     }
@@ -226,7 +225,7 @@ class SignUpModal extends Component {
                         </label>
                         <label className="Input"> {/* Password input */}
                             <div>
-                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
                             </div>
                             <span className="Input-Label">
                                 <span>Password</span>

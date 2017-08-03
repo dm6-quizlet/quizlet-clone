@@ -52,7 +52,6 @@ class SignInModal extends Component {
 
     axios.post('http://localhost:3001/api/users/authenticate', user)
       .then((response) => {
-        console.log(response.data);
         this.storeUserData(response.data.token, response.data.user)
       })  .catch(function(error) {
         console.log(error);
@@ -65,8 +64,6 @@ class SignInModal extends Component {
     let newInput = this.state.signInInput;
     newInput[reference] = event.target.value;
     this.setState({signInInput: newInput})
-    console.log(event.target.value)
-    console.log(this.state.signInInput)
   }
 
   setModal(modalBox) {
@@ -75,7 +72,6 @@ class SignInModal extends Component {
     if (!bodyStyle.overflow || bodyStyle.overflow === "auto") {
       bodyStyle.overflow = "hidden"
       modalBox.style.top = body.scrollTop + 'px'
-      console.log(body.scrollTop)
     } else if (bodyStyle.overflow === 'hidden') {
       bodyStyle.overflow = "auto"
     }
@@ -95,8 +91,14 @@ class SignInModal extends Component {
                     <div>
                       <form onSubmit={this.submitForm}>
                         <div>
-                          <button className="Log-In-Google-Button"></button>
-                          <button className="Log-In-Facebook-Button"></button>
+                          <button className="Log-In-Google-Button">
+                            <img className = "gf_icons" src= {require('../../assets/images/google-image.png')}/>
+                            <div className="login-google">Log in with Google</div>
+                          </button>
+                          <button className="Log-In-Facebook-Button">
+                            <img className = "gf_icons" src= {require('../../assets/images/icon_facebook.png')}/>
+                            <div className="login-facebook">Log in with Facebook</div>
+                          </button>
                         </div>
                         <label className="Input"> {/* Username input */}
                             <div>
@@ -108,7 +110,7 @@ class SignInModal extends Component {
                         </label>
                         <label className="Input"> {/* Password input */}
                           <div>
-                            <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
+                            <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
                           </div>
                           <span className="Input-Label">
                             <span>Password</span>
@@ -118,12 +120,12 @@ class SignInModal extends Component {
                           <input type="submit" value="Log in" className="Log-In-Button"/> {/* Sign up button */}
                         </div>
                         <div className="Logged-In-Container">
-                            <label className="Checkbox">    
+                            <label className="Checkbox">
                                 <input type="checkbox" value={this.state.checked} onChange={this.acceptTerms} name="TOS" />
                                 <div className={checkClass}>&#10003;</div>
                                 <div className="fake-label">Keep me logged in
                                 </div>
-                                
+
                             </label>
                             <div className="Align-Right-Forgot">
                                 <div className="Forgot-Password">Forgot password?</div>

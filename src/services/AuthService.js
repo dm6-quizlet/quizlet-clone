@@ -15,6 +15,7 @@ var auth = new auth0.WebAuth({
   domain: CLIENT_DOMAIN
 });
 
+export const BASE_URL = "http://localhost:3001"
 export function login() {
   auth.authorize({
     responseType: 'token id_token',

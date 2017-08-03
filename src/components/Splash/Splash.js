@@ -11,7 +11,7 @@ class Splash extends Component {
     super()
     this.state = {
       studysets: [],
-
+      user: {}
     }
 
   }
@@ -29,11 +29,10 @@ class Splash extends Component {
   render() {
     const studySetCards = this.state.studysets.map(set => {
       return (
-        <Card
-        key={set.id}
+        <Card key={set._id}
         title={set.title}
-        created_by={set.created_by}
-        term_count={set.term_count}
+        created_by={set.userId.username}
+        term_count={set.cards.length}
         image={set.image_url}
         />
       )
@@ -79,7 +78,7 @@ class Splash extends Component {
                 <div className="make-your-own">
                   <div className="make-your-own-content">
                     <h1>Make the perfect study set</h1>
-                    <Link to="/createStudySet"><button className="study-set-button">Create your own</button></Link>
+                    <Link to="/create-set"><button className="study-set-button">Create your own</button></Link>
                   </div>
                 </div>
                 <br />

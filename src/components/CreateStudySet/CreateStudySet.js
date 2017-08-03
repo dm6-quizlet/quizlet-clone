@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {toggleSignInModal} from '../../actions/modal'
 import StudySet from './StudySet'
 import AddCard from './AddCard'
 import Card from './Card'
@@ -51,7 +53,12 @@ class CreateStudySet extends Component {
     this.handleAddCard.bind(this)
   }
 
-
+  componentDidMount() {
+    if (!this.props.userId) {
+      console.log("No user")
+      this.props.toggleSignInModal()
+    }
+  }
   handleSubmit(e) {
     e.preventDefault()
     let _this = this.state;
@@ -115,6 +122,7 @@ class CreateStudySet extends Component {
     }
 
   render() {
+    console.log(this.props)
     // Here we are going to map out the array of cards in the studyset's state.
     // We
     let listOfCards = this.state.cards.map((card, index) =>
@@ -165,5 +173,10 @@ class CreateStudySet extends Component {
     )
   }
 }
+function mapStateToProps(state) {
+  return {
+    userId: state.auth.user.id
+  }
+}
 
-export default CreateStudySet
+export default connect(mapStateToProps, {toggleSignInModal})(CreateStudySet)
