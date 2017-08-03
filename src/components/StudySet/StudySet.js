@@ -137,7 +137,12 @@ export default class StudySet extends Component {
                                 </div>
                             </div>
                         </div> 
-                    <div> {/*  */}
+                    <div> {/* Add or Remove Terms  */}
+                        <div>
+                            <div>
+                                
+                            </div>
+                        </div>
                     </div> 
                 </div>
             </div>
