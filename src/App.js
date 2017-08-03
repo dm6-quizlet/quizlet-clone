@@ -12,7 +12,9 @@ import Teachers from './components/Teachers/Teachers'
 import Mission from './components/Mission/Mission'
 import Match from './components/Match/Match'
 import Flashcard from './components/Flashcard/Flashcard'
+import StudySet from './components/StudySet/StudySet'
 import {isLoggedIn} from './services/AuthService'
+>>>>>>> master
 import './App.css';
 
 class App extends Component {
@@ -36,9 +38,13 @@ class App extends Component {
           <Route exact path='/students' component={Students} />
           <Route exact path='/teachers' component={Teachers} />
           <Route exact path='/mission' component={Mission} />
+<<<<<<< HEAD
           //Matching game
           <Route exact path='/studyset/match' component={Match} />
           <Route exact path='/studyset/flashcards' component={Flashcard} />
+=======
+          <Route exact path='/study-set' component={StudySet} />
+>>>>>>> 453ff3763aadf3ee98707d6c8cdc71d19ac8356a
         </Switch>
       </div>
     );

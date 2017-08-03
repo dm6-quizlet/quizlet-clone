@@ -1,0 +1,155 @@
+body
+{
+    margin: 0;
+}
+.Study-Page-Header
+{
+    background: white;
+    min-height: 11.875rem;
+    padding-top: 5.5rem;
+    padding-left: 4rem;
+}
+.Study-Page-Header-Container
+{   
+    text-align: left;
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+    color: #455358;
+}
+.Term-Header
+{
+    font-weight: bold;
+    font-size: 54px;
+}
+.Info-Buttons-Container
+{   
+    padding-top: 2rem;
+    display: flex;
+    justify-content: flex-start;
+
+}
+.Info-Buttons
+{   
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    background-color: #3ccfcf;
+    color: #fff;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+.Page-Mode-Padding
+{
+    padding-top: 7rem;
+    padding-bottom: 4.3rem;
+    padding-left: 4rem;
+}
+.Page-Mode-Container
+{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.Page-Mode-Button-Wrapper
+{   
+    cursor: pointer;
+    display: inline-block;
+    height: 13.5rem;
+    margin-right: 1rem;
+    width: 13.5rem;
+    box-shadow: 0 0.3125rem 1rem 0 rgba(0,0,0,0.24);
+    border-bottom: 0.45rem solid #3ccfcf;
+    position: relative;
+    
+}
+.Page-Mode-Button-Wrapper:hover
+{   
+    border-bottom: 0.45rem solid #ffcd1f;
+}
+.Page-Mode-Buttons
+{
+    background: #fff;
+    color: #3ccfcf;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.Page-Image-Flashcards
+{
+    margin-top: 20%;
+}
+.Page-Image-Learn
+{
+    margin-top: 20%;
+}
+.Page-Image-Spell
+{
+    margin-top: 20%;
+}
+.Page-Image-Test
+{
+    margin-top: 20%;
+}
+.Page-Image-Match
+{
+    margin-top: 20%;
+}
+.Page-Image-Gravity
+{
+    margin-top: 15%;
+}
+.Page-Mode-Text
+{
+    position: absolute;
+    bottom: 1.5rem; 
+}
+
+.Study-Set-Background
+{
+    background-color: #f0f0f0;
+    min-height: 40rem;
+    font-family: hurme_no2-webfont,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+.Study-Set-Container
+{
+    padding-right: 14rem;
+    padding-left: 4rem;
+    padding-top:3.5rem;
+}
+
+.Each-Card{
+    margin-top: 1em;
+    background: white;
+    display: flex; 
+    min-height: 7rem;
+    padding: 2rem 6rem;
+    height: auto;
+    
+}
+.Term-Spacing
+{
+    padding-right: 5rem;
+}
+.Definition-Position
+{
+    padding-left: 5rem;
+    border-left: 0.2rem solid #cecece;
+    max-width: 100%;
+    
+}
+.Card-Details
+{
+    display: flex;
+    align-items: center;
+    max-width: 75%;
+}
+.Text-Display
+{
+    word-wrap: break-word;
+    text-align: left;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 1.5;
+}
