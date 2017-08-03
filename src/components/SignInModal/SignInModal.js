@@ -109,12 +109,21 @@ class SignInModal extends Component {
                             </span>
                         </label>
                         <label className="Input"> {/* Password input */}
+<<<<<<< HEAD
                           <div>
                             <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
                           </div>
                           <span className="Input-Label">
                             <span>Password</span>
                           </span>
+=======
+                            <div>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
+                            </div>
+                            <span className="Input-Label">
+                                <span>Password</span>
+                            </span>
+>>>>>>> master
                         </label>
                         <div className="Log-In-Button-Container">
                           <input type="submit" value="Log in" className="Log-In-Button"/> {/* Sign up button */}

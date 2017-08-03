@@ -31,6 +31,9 @@ class App extends Component {
               return <Redirect to="/" />
             }
           }} />
+          <Route exact path='/study-set/match' component={Match} />
+          <Route exact path='/study-set/flashcards' component={Flashcard} />
+          <Route exact path='/study-set' component={StudySet} />
         </Switch>
       </div>
     );

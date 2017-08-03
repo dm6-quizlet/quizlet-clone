@@ -25,12 +25,12 @@ class Nav extends Component {
 
   beginSearch() {
     window.$(this.navContent).fadeOut()
-    window.$(this.newSearch).delay(300).fadeIn('slow')
+    window.$(this.newSearch).delay(300).fadeIn()
   }
 
   endSearch() {
     window.$(this.newSearch).fadeOut()
-    window.$(this.navContent).delay(300).fadeIn()
+    window.$(this.navContent).delay(150).fadeIn()
   }
 
   showDropdown() {
