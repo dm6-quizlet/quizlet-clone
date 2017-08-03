@@ -39,17 +39,17 @@
 }
 
 .nav-search:hover {
-  transition: .5s;
+  transition: .25s;
   color: #5C6EBC;
 }
 
 .nav-create:hover {
-  transition: .5s;
+  transition: .25s;
   color: #5C6EBC;
 }
 
 .nav-create:hover a {
-  transition: .5s;
+  transition: .25s;
   color: #5C6EBC;
 }
 
@@ -78,7 +78,7 @@
 }
 
 #navbar-login:hover {
-  transition: .5s;
+  transition: .25s;
   color: #5C6EBC;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .sign-up-btn:hover {
-  transition: .5s;
+  transition: .25s;
   background-color: #FFCD1F;
   color: #6E6E4B;
 }
@@ -173,7 +173,7 @@
 }
 
 .dropdown li:hover {
-  transition: .5s;
+  transition: .25s;
   background-color: #FFCD1F;
   color: #6E6E4B;
 }

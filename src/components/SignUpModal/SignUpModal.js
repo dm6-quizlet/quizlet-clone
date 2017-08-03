@@ -217,7 +217,7 @@ class SignUpModal extends Component {
                         </label>
                         <label className="Input"> {/* Email input */}
                             <div>
-                                <input onChange={this.handleChange.bind(this, 'email')} className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'email')} className="Input-Box" type="email"></input>
                             </div>
 
                             <span className="Input-Label">
@@ -226,7 +226,7 @@ class SignUpModal extends Component {
                         </label>
                         <label className="Input"> {/* Password input */}
                             <div>
-                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
                             </div>
                             <span className="Input-Label">
                                 <span>Password</span>

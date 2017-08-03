@@ -10,11 +10,10 @@ import QuizletLearn from './components/QuizletLearn/QuizletLearn'
 import Students from './components/Students/Students'
 import Teachers from './components/Teachers/Teachers'
 import Mission from './components/Mission/Mission'
-<<<<<<< HEAD
+import Match from './components/Match/Match'
+import Flashcard from './components/Flashcard/Flashcard'
 import StudySet from './components/StudySet/StudySet'
-=======
 import {isLoggedIn} from './services/AuthService'
->>>>>>> master
 import './App.css';
 
 class App extends Component {
@@ -38,6 +37,8 @@ class App extends Component {
           <Route exact path='/students' component={Students} />
           <Route exact path='/teachers' component={Teachers} />
           <Route exact path='/mission' component={Mission} />
+          <Route exact path='/study-set/match' component={Match} />
+          <Route exact path='/study-set/flashcards' component={Flashcard} />
           <Route exact path='/study-set' component={StudySet} />
         </Switch>
       </div>

@@ -1,0 +1,219 @@
+.game {
+  background-color: #eee;
+  height: 100%;
+  position: relative;
+}
+
+/*.card-container {
+  text-align: center;
+  margin: auto;
+  height: 100%
+}*/
+
+.card {
+  transform-origin: center;
+  position: absolute;
+  top: 100px;
+  margin-left: 25%;
+  background-color: white;
+  margin-top:20px;
+  height: 70%;
+  width: 70%;
+}
+
+@media (max-width: 720px)  {
+    .gamebar-main-container {
+      display: none;
+    }
+}
+
+
+.gamebar-main-container {
+  text-align: left;
+  margin-left: 0%;
+  width: 200px;
+  min-height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1.25rem 0 rgba(0,0,0,0.28);
+  position:relative;
+  z-index: 200;
+  color: #455358;
+  padding:0;
+}
+
+@media (min-width: 1300px)  {
+  .gamebar-main-container {
+    margin-left: 5%;
+  }
+}
+.gamebar-header {
+  font-weight: bold;
+  margin-left: 10%;
+}
+.Input-Label
+{
+    color: #97a5aa;
+    display: block;
+    margin-top: 0.625rem;
+    text-align: inherit;
+
+    text-transform: uppercase;
+    letter-spacing: 0.0625rem;
+    line-height: 1.3;
+}
+
+.gamebar-containers {
+  border-bottom: 1px solid #E8E8E8;
+  padding: 18px 0;
+}
+
+.gamebar-containers i {
+  color: #3DCECF;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.progression-bar {
+  height: 12px;
+  position: relative;
+  width: 100%;
+  z-index: 10
+}
+
+.progression-total {
+  position: absolute;
+  height: 100%;
+  z-index: 50;
+  background-color: #ddd;
+  width: 100%;
+}
+
+.progression-progress {
+  position: absolute;
+  height: 100%;
+  z-index: 100;
+  background-color: #4257b2;
+  width: 50%;
+}
+
+.content-containers {
+  display: flex;
+  justify-content:flex-start;
+  height: 38px;
+  width: 100%;
+  padding: 10px;
+}
+
+
+.Side-Button
+{
+    margin-top: 2rem;
+    width: 100%;
+    height: 4.5rem;
+    color: #3ccfcf;
+    background-color: #fff;
+    border: solid 2px #ddd;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.4rem;
+}
+
+.Side-Button:focus {
+  outline: none;
+}
+
+.Side-Button-Primary {
+  background-color: #3ccfcf;
+  color: #fff;
+  border: none;
+
+}
+.Side-Button:hover {
+  color: #fecc1f;
+  border: solid 2px #ddd;
+
+}
+
+.Side-Button-Primary:hover
+{
+    border: none;
+    background-color: #fecc1f;
+    color: #455358;
+    font-weight: 600;
+}
+
+/*.content-containers:hover {
+  transition: .5s;
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+}*/
+
+/*.content-containers:hover i {
+  color: #455358;
+}*/
+
+.title {
+  font-size: 12px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 20px;
+  color: #c9cacb;
+}
+
+.gamebar-quizletnews-container {
+  margin-top: 15px;
+}
+
+.quizletnews-image {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.quizletnews-main-container {
+  border-bottom: 1px solid #E8E8E8;
+  padding: 18px 0;
+}
+
+.quizletnews-main-container h1 {
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.blog-by {
+  font-size: 12px;
+  line-height: 16px;
+  color: #c9cacb;
+  text-alig              <i className="fa fa-cog" aria-hidden="true"></i>n: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.blog-post {
+  font-size: 15px;
+  line-height: 28px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.game-buttons {
+  margin-top: 200%
+}
+
+.gamebar-footer-container {
+  text-align: left;
+  color: #3DCECF;
+  font-size: 12px;
+  line-height: 16px;
+  margin: 20px;
+}
+
+/*.footer-container:hover {
+  transition: .5s;
+  color: #FFCD1F;
+}*/
