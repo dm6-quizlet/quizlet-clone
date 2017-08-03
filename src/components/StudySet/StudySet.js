@@ -137,10 +137,10 @@ export default class StudySet extends Component {
                                 </div>
                             </div>
                         </div> 
-                    <div> {/* Add or Remove Terms  */}
+                    <div className="Add-Terms-Background"> {/* Add or Remove Terms  */}
                         <div>
                             <div>
-                                
+                                <button className="Add-Terms-Button">Add or Remove Terms</button> 
                             </div>
                         </div>
                     </div> 

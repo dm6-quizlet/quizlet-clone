@@ -10,11 +10,8 @@ import QuizletLearn from './components/QuizletLearn/QuizletLearn'
 import Students from './components/Students/Students'
 import Teachers from './components/Teachers/Teachers'
 import Mission from './components/Mission/Mission'
-<<<<<<< HEAD
 import StudySet from './components/StudySet/StudySet'
-=======
 import {isLoggedIn} from './services/AuthService'
->>>>>>> master
 import './App.css';
 
 class App extends Component {

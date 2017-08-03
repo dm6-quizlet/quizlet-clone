@@ -86,7 +86,7 @@ body
 }
 .Page-Image-Spell
 {
-    margin-top: 20%;
+    margin-top: 23%;
 }
 .Page-Image-Test
 {
@@ -152,4 +152,27 @@ body
     font-weight: 100;
     font-size: 16px;
     line-height: 1.5;
+}
+.Add-Terms-Background
+{
+    background-color: #f0f0f0;
+    padding-left: 5rem;
+    height: 20rem;
+}
+.Add-Terms-Button
+{
+    padding: 2.5rem 10rem;
+    background-color: #3ccfcf; 
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.125rem;
+    letter-spacing: 0.15rem;
+    border: none;
+    font-size: 16px;
+}
+.Add-Terms-Button:hover
+{
+    background-color: #fecc1f;
+    color: #455358;
+    font-weight: 600;
 }
