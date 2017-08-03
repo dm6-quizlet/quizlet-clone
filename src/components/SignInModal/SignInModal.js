@@ -107,23 +107,23 @@ class SignInModal extends Component {
                             </span>
                         </label>
                         <label className="Input"> {/* Password input */}
-                          <div>
-                            <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="text"></input>
-                          </div>
-                          <span className="Input-Label">
-                            <span>Password</span>
-                          </span>
+                            <div>
+                                <input onChange={this.handleChange.bind(this, 'password')} className="Input-Box" type="password"></input>
+                            </div>
+                            <span className="Input-Label">
+                                <span>Password</span>
+                            </span>
                         </label>
                         <div className="Log-In-Button-Container">
                           <input type="submit" value="Log in" className="Log-In-Button"/> {/* Sign up button */}
                         </div>
                         <div className="Logged-In-Container">
-                            <label className="Checkbox">    
+                            <label className="Checkbox">
                                 <input type="checkbox" value={this.state.checked} onChange={this.acceptTerms} name="TOS" />
                                 <div className={checkClass}>&#10003;</div>
                                 <div className="fake-label">Keep me logged in
                                 </div>
-                                
+
                             </label>
                             <div className="Align-Right-Forgot">
                                 <div className="Forgot-Password">Forgot password?</div>
