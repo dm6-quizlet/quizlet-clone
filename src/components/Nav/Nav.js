@@ -12,13 +12,15 @@ class Nav extends Component {
   constructor () {
     super()
     this.state = {
-      searchText : '',
+      searchTerm : '',
       showDropdown: false
     }
     this.beginSearch = this.beginSearch.bind(this)
     this.endSearch = this.endSearch.bind(this)
     this.showDropdown = this.showDropdown.bind(this)
     this.logoutUser = this.logoutUser.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+    this.submitSearch = this.submitSearch.bind(this)
   }
 
   // methods
@@ -26,6 +28,18 @@ class Nav extends Component {
   beginSearch() {
     window.$(this.navContent).fadeOut()
     window.$(this.newSearch).delay(300).fadeIn()
+  }
+
+  handleChange(e) {
+    this.setState({
+      searchTerm : e.target.value
+    })
+  }
+
+  submitSearch(e) {
+    e.preventDefault()
+    this.props.updateSearchTerm(this.state.searchTerm)
+    this.props.history.push('/subject')
   }
 
   endSearch() {
@@ -45,7 +59,7 @@ class Nav extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.user.username && nextProps.user.username !== this.props.user.username) {
+    if (nextProps.user.username && nextProps.user.username !== this.props.user.username && window.location.pathname !== '/create-set') {
       this.props.history.push('/' + nextProps.user.username)
     }
   }
@@ -102,8 +116,10 @@ class Nav extends Component {
             <div className="new-search" ref= {newSearch => this.newSearch = newSearch}>
               <div className="search-input">
                 <span className="glyphicon glyphicon-search" aria-hidden="true"></span>
-                <input className="search-input-box" type="text" placeholder="Search" />
-                <span onClick={this.endSearch} className="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                <form onSubmit={this.submitSearch}>
+                  <input className="search-input-box" type="text" placeholder="Search" value={this.state.searchTerm} onChange={this.handleChange}/>
+                  <span onClick={this.endSearch} className="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </form>
               </div>
             </div>
         </div>

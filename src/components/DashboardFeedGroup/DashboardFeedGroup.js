@@ -13,6 +13,7 @@ class DashboardFeedGroup extends Component {
           image_url = {set.userId.image_url}
           created_by={set.userId.username}
           term_count={set.cards.length}
+          _id={set._id}
         />
       )
     })

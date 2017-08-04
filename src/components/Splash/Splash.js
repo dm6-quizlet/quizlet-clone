@@ -36,6 +36,7 @@ class Splash extends Component {
         created_by={set.userId.username}
         term_count={set.cards.length}
         image={set.image_url}
+        _id={set._id}
         />
       )
     })
@@ -77,12 +78,16 @@ class Splash extends Component {
               <br />
               Study Sets and Counting</h2>
               <div className="study-sets">
-                <div className="make-your-own">
-                  <div className="make-your-own-content">
-                    <h1>Make the perfect study set</h1>
-                    <Link to="/create-set"><button className="study-set-button">Create your own</button></Link>
+                {studySetCards.length ?
+                  <div className="make-your-own">
+                    <div className="make-your-own-content">
+                      <h1>Make the perfect study set</h1>
+                      <Link to="/create-set"><button className="study-set-button">Create your own</button></Link>
+                    </div>
                   </div>
-                </div>
+                  :
+                  null
+                }
                 <br />
                 {studySetCards}
               </div>

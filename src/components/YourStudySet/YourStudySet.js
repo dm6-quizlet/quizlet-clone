@@ -58,7 +58,7 @@ class YourStudySet extends Component {
         return this.props.folder.studysets.indexOf(studyset._id) > -1
       })
     }
-    console.log(this.props);
+    console.log(this.state.studysets);
     return (
       <div className="main-container">
         <div className="header-main-container">
