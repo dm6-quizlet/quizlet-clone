@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {toggleSignInModal} from '../../actions/modal'
 import StudySet from './StudySet'
 import AddCard from './AddCard'
 import Card from './Card'
@@ -69,6 +71,14 @@ class CreateStudySet extends Component {
   }
 
 
+  componentDidMount() {
+    if (!this.props.userId) {
+      console.log("No user")
+      this.props.toggleSignInModal()
+    }
+  }
+
+
   rotateVisibilitySettings(e) {
     let arr = ['Everyone', 'Certain classes','People with a password']
     this.state.visibilitySetting;
@@ -92,6 +102,7 @@ class CreateStudySet extends Component {
     this.state.studysetObject.privilages = arr[this.state.privilageSetting]
     this.setState({studysetObject: this.state.studysetObject})
   }
+
 
 
 
@@ -171,6 +182,7 @@ class CreateStudySet extends Component {
       }
 
   render() {
+    console.log(this.props)
     // Here we are going to map out the array of cards in the studyset's state.
     // We
 
@@ -252,5 +264,10 @@ class CreateStudySet extends Component {
     )
   }
 }
+function mapStateToProps(state) {
+  return {
+    userId: state.auth.user.id
+  }
+}
 
-export default CreateStudySet
+export default connect(mapStateToProps, {toggleSignInModal})(CreateStudySet)

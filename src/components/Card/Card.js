@@ -10,10 +10,11 @@ class Card extends Component {
             <img className="study-set-image" src={this.props.image} />
           </div>
           <div className="study-set-info-container">
-            <div className="created-by">{this.props.created_by}</div>
             <div className="term-count">{this.props.term_count}</div>
+            <div className="card-profile-image">{/*this.props.user.image_url*/}</div>
+            <div className="created-by">{this.props.created_by}</div>
           </div>
-          <h6>{this.props.title}</h6>
+          <h6 className="set-title">{this.props.title}</h6>
         </div>
       </div>
     )
