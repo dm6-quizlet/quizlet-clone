@@ -6,6 +6,12 @@
   background-color: white;
 }
 
+.feed-list-item-container:hover {
+  transition: .5s;
+  border-bottom: 5px solid #FFCD1F;
+  color: #FFCD1F;
+}
+
 .set-preview-header {
   display: flex;
 }

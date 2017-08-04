@@ -12,6 +12,7 @@ import Mission from './components/Mission/Mission'
 import Match from './components/Match/Match'
 import Flashcard from './components/Flashcard/Flashcard'
 import StudySet from './components/StudySet/StudySet'
+import Subject from './components/Subject/Subject'
 import './App.css';
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path='/study-set/match' component={Match} />
           <Route exact path='/study-set/flashcards' component={Flashcard} />
           <Route exact path='/study-set' component={StudySet} />
+          <Route exact path='/subject' component={Subject} />
           <Route path="/:username" render={({match}) => {
             if (this.props.userId && match.params.username === this.props.username) {
               return <Dashboard />

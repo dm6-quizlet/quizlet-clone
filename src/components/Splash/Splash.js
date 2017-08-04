@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
 import axios from 'axios'
+import {BASE_URL} from '../../services/AuthService'
 import Card from '../Card/Card'
 import Footer from '../Footer/Footer'
 import './Splash.css'
@@ -18,11 +19,11 @@ class Splash extends Component {
   }
 
   componentWillMount () {
-    axios.get('http://localhost:3001/api/studysets')
+    axios.get(BASE_URL + '/api/studysets')
     .then(response => response.data)
-    .then(res => {
+    .then(studysets => {
       this.setState({
-        studysets: res
+        studysets
       })
     })
   }
