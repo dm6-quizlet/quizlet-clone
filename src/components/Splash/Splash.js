@@ -36,6 +36,7 @@ class Splash extends Component {
         created_by={set.userId.username}
         term_count={set.cards.length}
         image={set.image_url}
+        image_url={set.userId.image_url}
         _id={set._id}
         />
       )
