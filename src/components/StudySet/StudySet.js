@@ -2,32 +2,31 @@ import React, {Component} from 'react';
 import './StudySet.css'
 import axios from 'axios';
 import {Link} from "react-router-dom"
+import {connect} from "react-redux"
+import {toggleSignInModal} from "../../actions/modal"
 
-export default class StudySet extends Component {
+class StudySet extends Component {
     constructor() {
         super()
-            this.state = {};
-            this.state.studyset = {
-                id: '',
-                title: '',
-                cards: [
-                    {
-                        term: 'term1',
-                        definition: 'Oooooooooooooeoeoeoeoeoeoeoeoeoeoeoeoealskdfjalsdkjflaskdjfalskjfdoeoeoeoeoeoeoeoeoeoeeooooeoeoeoeoeoeoeoeoeoeoeoeoeoeoeoeeo',
-                        imageURL: '',
-                        id: 'asdiahouha',
-                    },
-                    {
-                        term: 'term2',
-                        definition: 'def2',
-                        imageURL: '',
-                        id: 'asdhoahrega',
-                    }
-                ],
-            }
-    }
+            this.state = {
+                studyset:{
+                    cards:[
 
-    render() {
+                    ]
+                }
+            };    
+        }
+
+    componentWillMount() {
+    axios.get('http://localhost:3001/api/studysets/studysetid/0636ec02-57a9-41ac-8b72-c4bcd744d958')
+      .then((response) => {
+        console.log(response.data.studyset[0]);
+        this.setState({studyset:response.data.studyset[0]})
+      }) .catch(function (error) {
+        console.log(error);
+      });
+    }
+    render() { 
         let List = this.state.studyset.cards;
         let listOfCards = List.map((card) => {
             console.log('card:',card)
@@ -54,8 +53,6 @@ export default class StudySet extends Component {
           
         })
         console.log(listOfCards)
-          
-
         return (
             <div>
                 <div>
@@ -63,10 +60,10 @@ export default class StudySet extends Component {
                         <div className="Study-Page-Header-Container">
                             <div>
                                 <span> How many terms </span>
-                                <span> Name of user </span>
+                                 <span>{this.props.username}</span> 
                             </div>  
                             <div>
-                                <h1 className="Term-Header">Name of term </h1>
+                                <h1 className="Term-Header">{this.state.studyset.title}</h1>
                             </div>
                         </div>
                         <div>
@@ -154,3 +151,12 @@ export default class StudySet extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    console.log(state.auth.user.username)
+  return {
+    username: state.auth.user.username
+  }
+}
+
+export default connect(mapStateToProps, {toggleSignInModal})(StudySet)

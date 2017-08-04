@@ -6,6 +6,7 @@ import AddCard from './AddCard'
 import Card from './Card'
 import uuid from 'uuid'
 import axios from 'axios'
+import {Link, Redirect} from "react-router-dom"
 import './CreateStudySet.css'
 
 
@@ -15,7 +16,7 @@ class CreateStudySet extends Component {
     super();
     this.state = {
       studysetObject: {
-        id: uuid.v4().slice(14,36),
+        id: uuid.v4(),
         title: '',
         cards: [
           {term: '',
@@ -39,7 +40,7 @@ class CreateStudySet extends Component {
           imageURL: '',
           id: uuid.v4()}
         ],
-        userId: 1234,
+        userId: "",
         password: '',
         // can equal 'Everyone',"People with a password", "Certain classes",
         visibility: 'Everyone',
@@ -53,6 +54,7 @@ class CreateStudySet extends Component {
       showImportCard: false,
       visibilitySetting: 0,
       privilageSettings: 0,
+      redirect: false
 
 
     };
@@ -76,8 +78,10 @@ class CreateStudySet extends Component {
       console.log("No user")
       this.props.toggleSignInModal()
     }
-  }
+    console.log(this.props.userId)
 
+    this.setState({studysetObject: {...this.state.studysetObject, userId: this.props.userId}}, () => {console.log(this.state.studysetObject)})
+  }
 
   rotateVisibilitySettings(e) {
     let arr = ['Everyone', 'Certain classes','People with a password']
@@ -110,8 +114,9 @@ class CreateStudySet extends Component {
     e.preventDefault()
     let _this = this.state.studysetObject;
     axios.post('http://localhost:3001/api/studysets/create', _this)
-      .then(function(response) {
+      .then((response) => {
         console.log(response.data);
+        this.setState({redirect: true})
       }) .catch(function (error) {
         console.log(error);
       });
@@ -181,6 +186,8 @@ class CreateStudySet extends Component {
         })
       }
 
+
+
   render() {
     console.log(this.props)
     // Here we are going to map out the array of cards in the studyset's state.
@@ -189,6 +196,12 @@ class CreateStudySet extends Component {
     let listOfCards = this.state.studysetObject.cards.map((card, index) =>
     <Card key={card.id} onDelete={this.handleDeleteCard.bind(this)} index={index} update={this.handleChange.bind(this)} term={card.term} definition={card.definition}/>
   );
+
+  const { redirect } = this.state;
+
+  if (redirect) {
+    return <Redirect to={'/study-set/'+this.state.studysetObject.id} />;
+  }
 
     return (
 
@@ -202,7 +215,7 @@ class CreateStudySet extends Component {
 
           <h1 className="Page-Title col-md-9">Create a new study set</h1>
 
-          <input type="submit" value="Create" id="SubmitBottom" className="col-md-3 Create-Set-Button Create-Set-Button-Top"/>
+            <input type="submit" value="Create" id="SubmitBottom" className="col-md-3 Create-Set-Button Create-Set-Button-Top"/>
 
         </div>
         <div>
@@ -265,9 +278,12 @@ class CreateStudySet extends Component {
   }
 }
 function mapStateToProps(state) {
+    console.log(state.auth.user.id)
   return {
     userId: state.auth.user.id
   }
 }
 
 export default connect(mapStateToProps, {toggleSignInModal})(CreateStudySet)
+
+
