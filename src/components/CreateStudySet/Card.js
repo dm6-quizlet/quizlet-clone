@@ -36,7 +36,7 @@ render() {
     </div>
     {
       this.state.showImageUpload ?
-        <div className="Card"><input onChange={this.handleChange.bind(this, this.props.index, 'imageURL')} value={this.props.imageURL} placeholder="Image URL"/></div>
+        <div className="Card"><input onChange={this.handleChange.bind(this, this.props.index, 'image_url')} value={this.props.image_url} placeholder="Image URL"/></div>
       : null
     }
 

@@ -20,39 +20,39 @@ class CreateStudySet extends Component {
         cards: [
           {term: '',
           definition: '',
-          imageURL: '',
+          image_url: '',
           id: uuid.v4()},
           {term: '',
           definition: '',
-          imageURL: '',
+          image_url: '',
           id: uuid.v4()},
           {term: '',
           definition: '',
-          imageURL: '',
+          image_url: '',
           id: uuid.v4()},
           {term: '',
           definition: '',
-          imageURL: '',
+          image_url: '',
           id: uuid.v4()},
           {term: '',
           definition: '',
-          imageURL: '',
+          image_url: '',
           id: uuid.v4()}
         ],
-        userId: 1234,
+        userId: "1234",
         password: '',
         // can equal 'Everyone',"People with a password", "Certain classes",
         visibility: 'Everyone',
         // can equal "Everyone""Just me","People with a password", "Certain classes",
-        privilages: 'Just me',
+        privileges: 'Just me',
         description: '',
-        updated: Date.now,
-        created: Date.now,
+        // updated: Date.now,
+        // created: Date.now,
       },
       showDescription: false,
       showImportCard: false,
       visibilitySetting: 0,
-      privilageSettings: 0,
+      privilegeSettings: 0,
 
 
     };
@@ -65,8 +65,8 @@ class CreateStudySet extends Component {
     this.rotateVisibilitySettings =
     this.rotateVisibilitySettings.bind(this)
 
-    this.rotatePrivilageSettings =
-    this.rotatePrivilageSettings.bind(this)
+    this.rotatePrivilegeSettings =
+    this.rotatePrivilegeSettings.bind(this)
 
   }
 
@@ -91,15 +91,15 @@ class CreateStudySet extends Component {
     this.setState({studysetObject: this.state.studysetObject})
   }
 
-  rotatePrivilageSettings(e) {
+  rotatePrivilegeSettings(e) {
     let arr = ['Everyone', 'Certain classes','People with a password', 'Just me']
-    this.state.privilageSetting;
-    if (this.state.privilageSetting<arr.length-1)
-    {this.state.privilageSetting = this.state.privilageSetting+1}
+    this.state.privilegeSetting;
+    if (this.state.privilegeSetting<arr.length-1)
+    {this.state.privilegeSetting = this.state.privilegeSetting+1}
     else  {
-      this.state.privilageSetting = 0
+      this.state.privilegeSetting = 0
     }
-    this.state.studysetObject.privilages = arr[this.state.privilageSetting]
+    this.state.studysetObject.privileges = arr[this.state.privilegeSetting]
     this.setState({studysetObject: this.state.studysetObject})
   }
 
@@ -131,7 +131,7 @@ class CreateStudySet extends Component {
     e.preventDefault()
     this.setState({studysetObject:{...this.state.studysetObject,
       cards:[...this.state.studysetObject.cards, ...[{term: '',
-              definition: '', image: '', id: uuid.v4()}]]
+              definition: '', image_url: '', id: uuid.v4()}]]
     }});
     console.log(this.state.studysetObject.cards)
   }
@@ -164,6 +164,8 @@ class CreateStudySet extends Component {
       let newArray = this.state.studysetObject.cards.slice();
       newArray[index][reference] = event.target.value;
       this.setState({studysetObject:{ ...this.state.studysetObject, cards:[...newArray]}})
+        console.log(this.state.studysetObject.userId)
+      
     }
 
     handleChangeDescription(event) {
@@ -171,14 +173,15 @@ class CreateStudySet extends Component {
       this.setState({
         studysetObject: {...this.state.studysetObject, description:newDescription}
         })
-
+        console.log(this.state.studysetObject.description)
     }
 
     handleChangeTitle(event) {
       let newTitle = event.target.value
       this.setState({
         studysetObject: {...this.state.studysetObject, title:newTitle}
-        })
+      })
+      console.log(this.state.studysetObject.title)
       }
 
   render() {
@@ -187,7 +190,7 @@ class CreateStudySet extends Component {
     // We
 
     let listOfCards = this.state.studysetObject.cards.map((card, index) =>
-    <Card key={card.id} onDelete={this.handleDeleteCard.bind(this)} index={index} update={this.handleChange.bind(this)} term={card.term} definition={card.definition}/>
+    <Card key={card.id} onDelete={this.handleDeleteCard.bind(this)} index={index} update={this.handleChange.bind(this)} term={card.term} image_url={card.image_url} definition={card.definition}/>
   );
 
     return (
@@ -212,7 +215,7 @@ class CreateStudySet extends Component {
         <div className="row">
           <div className="col-md-5"><a href="#" onClick={()=>{this.setState({showImportCard: !this.state.showImportCard})}}>+ Import from Word, Excel, Google Docs, etc.</a></div>
           <div className="col-md-3" onClick={this.rotateVisibilitySettings}>Visible to: {this.state.studysetObject.visibility}<br/><a href='#'>Change</a></div>
-          <div className="col-md-3" onClick={this.rotatePrivilageSettings}>Can be edited by: {this.state.studysetObject.privilages}<br/><a href='#'>Change</a></div>
+          <div className="col-md-3" onClick={this.rotatePrivilegeSettings}>Can be edited by: {this.state.studysetObject.privileges}<br/><a href='#'>Change</a></div>
           <div className="col-md-1"><div clasName="tooltip" onClick={()=>{this.setState({showDescription: !this.state.showDescription})}}>
 
             {/* SVG vector image */}
