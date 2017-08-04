@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
+import axios from 'axios'
 import Card from '../Card/Card'
 import Footer from '../Footer/Footer'
 import './Splash.css'
@@ -17,8 +18,8 @@ class Splash extends Component {
   }
 
   componentWillMount () {
-    fetch('http://localhost:3001/api/studysets')
-    .then(response => response.json())
+    axios.get('http://localhost:3001/api/studysets')
+    .then(response => response.data)
     .then(res => {
       this.setState({
         studysets: res

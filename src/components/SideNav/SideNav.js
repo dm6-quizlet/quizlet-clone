@@ -102,7 +102,8 @@ class SideNav extends Component {
 
 function mapStateToProps(state) {
   return {
-    userId: state.auth.user.id
+    userId: state.auth.user.id,
+    folders: state.folders
   }
 }
 

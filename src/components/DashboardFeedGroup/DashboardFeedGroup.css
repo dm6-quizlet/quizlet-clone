@@ -1,0 +1,19 @@
+.studyset-created-date {
+  width: 100px;
+  text-align: left;
+  margin-top: 40px;
+}
+
+.feed-header-container {
+  display: flex;
+}
+
+.hr-container {
+  width: 100%;
+  height: 1px;
+  margin-top: 25px;
+  margin-left: 12px;
+}
+hr {
+  border-color: #c0c0c0;
+}
