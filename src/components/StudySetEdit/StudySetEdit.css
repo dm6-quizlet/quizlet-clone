@@ -1,0 +1,205 @@
+.Card  a {
+  text-decoration: none;
+  color: grey;
+}
+
+@media (max-width:600px) {
+  .Page-Title {
+  font-size: 2em;
+  width: auto;
+  text-align: center;
+  }
+
+  .Create-Set-Button-Top{
+      width: 100%;
+      float: inherit;
+      margin: auto;
+    }
+
+    .Create-Set-Button
+    {
+        width: 100%;
+        float: inherit;
+        margin: auto;
+
+    }
+
+}
+.Card a:hover {
+  text-decoration: none;
+  transition: .25s;
+  color: #b58900;
+}
+
+.CreateStudySet {
+  background-color: #eee;
+  min-height: 100vh;
+  height: 100%;
+  width: 100vw;
+
+}
+.CSDTitleBlock {
+  background-color: white;
+}
+
+.CSDTitleBlock-content {
+  width: 80vw;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.Card-Delete-Container{
+  margin-top: .5em;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: grey;
+}
+.Card-Delete {
+  display: none;
+}
+.Card-Delete-Container:hover .Card-Delete{
+  display: block;
+}
+.Card-Delete-Container:hover .Card-Index{
+  display: none;
+}
+
+.Card-Input {
+  width: 100%;
+  position: relative;
+}
+
+.Card-Input-Buttons {
+  position: absolute;
+  right: 5%
+}
+.Input-Label {
+  text-align: left;
+}
+.Create-Set-Button-Top{
+    margin-top: 2rem;
+    margin-right: 1em;
+  }
+
+/*.Description {
+  display: none;
+}*/
+textarea {
+  width: 100%;
+  border: 0.15rem solid #455358;
+  transition: border .15s;
+  padding: 10px;
+}
+
+svg {
+  fill: #3ccfcf;
+}
+
+svg:hover {
+  fill: #ffcd20;
+}
+
+.text {
+  fill: black;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltiptext {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+  color: black;
+  z-index: 25
+}
+.tooltiptext:hover {
+  visibility: visible;
+  z-index: 1000;
+  background-color: black;
+  color: white;
+
+}
+
+textarea:focus {
+border: 0.35rem solid #ffcd20;
+outline: none;
+}
+
+.Import {
+  width: 100%
+}
+
+.Create-Set-Button
+{
+
+    width: 8em;
+    height: 4.5rem;
+    background-color: #3ccfcf;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.4rem;
+    float: right;
+}
+.Create-Set-Button:hover
+{
+    background-color: #fecc1f;
+    color: #455358;
+    font-weight: 600;
+}
+.create-button-container {
+  width: 80vw;
+  margin:auto;
+}
+
+.Add-Card-Button
+{
+    margin-top: 2rem;
+    width: 80vw;
+    height: 4.5rem;
+    background-color: white;
+    /*color: white;*/
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.4rem;
+}
+.Add-Card-Button:hover
+{
+    background-color: #fecc1f;
+    color: #455358;
+    font-weight: 600;
+}
+
+#l-label {
+    text-align: left;
+}
+
+.Card {
+    background-color: #fff;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    padding-Bottom: 20px;
+
+}
+
+.AddCard {
+    background-color: #fff;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Input-Label {
+    
+}

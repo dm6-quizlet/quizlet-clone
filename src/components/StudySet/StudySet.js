@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './StudySet.css'
 import axios from 'axios';
+import {Link} from "react-router-dom"
 
 export default class StudySet extends Component {
     constructor() {
@@ -80,6 +81,7 @@ export default class StudySet extends Component {
                     </div> 
                     <div className="Page-Mode-Padding"> {/* Flashcards, Learn, Spell, Test, Match, and Gravity buttons */}
                         <div className="Page-Mode-Container">
+                            <Link to="study-set/flashcards">
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Flashcards">
                                     <img src= {require('../../assets/images/flashcards.png')}/>
@@ -88,6 +90,7 @@ export default class StudySet extends Component {
                                     <div className="Page-Mode-Text">Flashcards</div>
                                 </div>
                             </span>
+                            </Link>
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Learn">
                                     <img src= {require('../../assets/images/learn.png')}/>
@@ -112,6 +115,7 @@ export default class StudySet extends Component {
                                     <div className="Page-Mode-Text">Test</div>
                                 </div>
                             </span>
+                            <Link to="study-set/match">
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Match">
                                     <img src= {require('../../assets/images/match.png')}/>
@@ -120,6 +124,7 @@ export default class StudySet extends Component {
                                     <div className="Page-Mode-Text">Match</div>
                                 </div>
                             </span>
+                            </Link>
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Mode-Buttons">
                                     <div className="Page-Image-Gravity">
@@ -139,9 +144,9 @@ export default class StudySet extends Component {
                         </div> 
                     <div className="Add-Terms-Background"> {/* Add or Remove Terms  */}
                         <div>
-                            <div>
+                            <Link to="/edit-set">
                                 <button className="Add-Terms-Button">Add or Remove Terms</button> 
-                            </div>
+                            </Link>
                         </div>
                     </div> 
                 </div>
