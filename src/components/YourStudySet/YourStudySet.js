@@ -15,7 +15,10 @@ class YourStudySet extends Component {
 
   componentDidMount() {
     axios.get(BASE_URL + '/api/studysets/' + this.props.user.id)
-    .then(response => response.data.studyset)
+    .then(response => {
+      return response.data.studyset
+    })
+
     .then(studysets => {
       this.setState({
         studysets
@@ -34,7 +37,6 @@ class YourStudySet extends Component {
         return this.props.folder.studysets.indexOf(studyset._id) > -1
       })
     }
-    console.log(studysets)
     const cards = studysets.map(set => (
       <div className="studyset-card" key={set.id}>
       <Card key={set._id}
@@ -50,20 +52,22 @@ class YourStudySet extends Component {
           <div className="header-container">
             <div className="profile-container">
               <div className="profile-image-container">
-                  {this.props.user.image_url ? <img src={this.props.user.image_url} className="profile-image"/> : null}
+                  {this.props.user.image_url ? <img src={this.props.user.image_url} className="study-set-profile-image"/> : null}
               </div>
               <div className="profile-content-container">
                 <div className="headline-row">
                   <div className="username-container">
-                    {this.props.user.username}
+                    <h1 className="study-set-username">{this.props.user.username}</h1>
                   </div>
                   <div className="user-info-container">
                     <div className="user-type-container">
-                      {/*USER.TYPE*/}
+                      {/*this.props.user.type*/}
+                      <h6 className="user-type">Teacher</h6>
                     </div>
                     <div className="user-name-container">
-                      {/*USER.FIRST_NAME*/}
-                      {/*USER.LAST_NAME*/}
+                      {/*this.props.user.first_name*/}
+                      {/*this.props.user.last_name*/}
+                      <h6 className="user-name">Jacob Leatherwood</h6>
                     </div>
                     <div className="user-indicator-container">
                     </div>
@@ -71,9 +75,9 @@ class YourStudySet extends Component {
                 </div>
                 <div className="tabs-row">
                   <div className="tabs-container">
-                    <button className="created-button">Created ({/*user.studysets.length*/})</button>
-                    <button className="studied-button">Studied</button>
-                    <button className="folders-button">Folders({/*user.folders.length*/})</button>
+                    <button className="created-button study-set-buttons" >Created ({/*user.studysets.length*/} )</button>
+                    <button className="studied-button study-set-buttons">Studied</button>
+                    <button className="folders-button study-set-buttons" >Folders( {/*user.folders.length*/})</button>
                   </div>
                 </div>
               </div>
@@ -84,7 +88,7 @@ class YourStudySet extends Component {
           <div className="content-container">
             <div className="content-filter-container">
               <div className="sort-container">
-                <h6 className="studyset-title">sort</h6>
+                <h6 className="studyset-title sort">sort</h6>
                 <select className="filter-dropdown">
                   <option value="latest" selected>Latest</option>
                   <option value="alphabetical">Alphabetical</option>

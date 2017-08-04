@@ -27,6 +27,9 @@ class App extends Component {
           <Route exact path='/students' component={Students} />
           <Route exact path='/teachers' component={Teachers} />
           <Route exact path='/mission' component={Mission} />
+          <Route exact path='/study-set/match' component={Match} />
+          <Route exact path='/study-set/flashcards' component={Flashcard} />
+          <Route exact path='/study-set' component={StudySet} />
           <Route path="/:username" render={({match}) => {
             if (this.props.userId && match.params.username === this.props.username) {
               return <Dashboard />
@@ -34,9 +37,6 @@ class App extends Component {
               return <Redirect to="/" />
             }
           }} />
-          <Route exact path='/study-set/match' component={Match} />
-          <Route exact path='/study-set/flashcards' component={Flashcard} />
-          <Route exact path='/study-set' component={StudySet} />
         </Switch>
       </div>
     );
