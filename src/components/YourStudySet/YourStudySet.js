@@ -15,7 +15,10 @@ class YourStudySet extends Component {
 
   componentDidMount() {
     axios.get(BASE_URL + '/api/studysets/' + this.props.user.id)
-    .then(response => response.data.studyset)
+    .then(response => {
+      return response.data.studyset
+    })
+
     .then(studysets => {
       this.setState({
         studysets
@@ -34,7 +37,6 @@ class YourStudySet extends Component {
         return this.props.folder.studysets.indexOf(studyset._id) > -1
       })
     }
-    console.log(studysets)
     const cards = studysets.map(set => (
       <div className="studyset-card" key={set.id}>
       <Card key={set._id}
@@ -73,9 +75,9 @@ class YourStudySet extends Component {
                 </div>
                 <div className="tabs-row">
                   <div className="tabs-container">
-                    <button className="created-button study-set-buttons">Created ({/*user.studysets.length*/} )</button>
+                    <button className="created-button study-set-buttons" >Created ({/*user.studysets.length*/} )</button>
                     <button className="studied-button study-set-buttons">Studied</button>
-                    <button className="folders-button study-set-buttons">Folders( {/*user.folders.length*/})</button>
+                    <button className="folders-button study-set-buttons" >Folders( {/*user.folders.length*/})</button>
                   </div>
                 </div>
               </div>
@@ -86,7 +88,7 @@ class YourStudySet extends Component {
           <div className="content-container">
             <div className="content-filter-container">
               <div className="sort-container">
-                <h6 className="studyset-title">sort</h6>
+                <h6 className="studyset-title sort">sort</h6>
                 <select className="filter-dropdown">
                   <option value="latest" selected>Latest</option>
                   <option value="alphabetical">Alphabetical</option>

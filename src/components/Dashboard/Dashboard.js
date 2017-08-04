@@ -13,7 +13,6 @@ class Dashboard extends Component {
   }
 
   selectFolder(folder) {
-    console.log(folder);
     this.setState({
       folder
     })
