@@ -13,7 +13,6 @@ class Dashboard extends Component {
   }
 
   selectFolder(folder) {
-    console.log(folder);
     this.setState({
       folder
     })
@@ -22,6 +21,7 @@ class Dashboard extends Component {
   // Method to update selected folder on state
   render() {
     return (
+      <div className="opening-container">
       <div className="container dashboard-main-container">
         <div className="dashboard-content-container">
           <div className="dashboard-sidenav-container">
@@ -38,6 +38,7 @@ class Dashboard extends Component {
               folder= {this.state.folder}/>
           </div>
         </div>
+      </div>
       </div>
     )
   }

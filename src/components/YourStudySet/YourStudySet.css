@@ -1,4 +1,141 @@
+.header-main-container {
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .studyset-card {
   background: green;
   height:50px
+}
+
+.headline-row {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.user-info-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.user-type {
+  margin: 0 10px;
+}
+
+.user-indicator-container {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #23b26d;
+  margin: 0 10px;
+}
+
+.study-set-profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  margin: 25px 10px;
+}
+
+.study-set-username {
+  font-size: 38px;
+  line-height: 48px;
+  color: #455358;
+}
+
+.user-type {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 16px;
+  color: #c9cacb;
+  font-weight: 200;
+}
+
+.user-name {
+  font-size: 16px;
+  line-height: 26px;
+  color: #c9cacb;
+  font-weight: 100;
+}
+
+.tabs-container {
+  text-align: left;
+}
+.study-set-buttons {
+  height: 40px;
+  color: #3DCECF;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-top: 2px solid #d9d9d9;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.study-set-buttons:hover {
+  transition: .5s;
+  color: #FFCD1F;
+}
+
+.study-set-buttons:focus {
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+  outline: 0;
+}
+
+.filter-dropdown {
+  width: 145px;
+  height: 35px;
+  background-color: white;
+  color: #3DCECF;
+  border-radius: 0;
+  outline: 0;
+}
+
+.studyset-filter {
+  width: 385px;
+  height: 30px;
+  border: none;
+  border-color: transparent;
+  border-bottom: 2px solid #455358;
+  font-size: 18px;
+  outline: 0;
+  background-color: #f0f0f0;
+  color: #c0c0c0;
+}
+
+.studyset-filter placeholder {
+  color: #C0C0C0;
+}
+
+.studyset-filter:focus {
+  border-bottom: 3px solid #FFCD1F;
+}
+
+.studyset-title {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.sort {
+  margin-right: 20px;
+}
+
+.content-filter-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: space-between;
 }

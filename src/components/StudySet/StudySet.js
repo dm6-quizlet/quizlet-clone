@@ -17,6 +17,7 @@ class StudySet extends Component {
             };    
         }
 
+<<<<<<< HEAD
     componentWillMount() {
     axios.get('http://localhost:3001/api/studysets/studysetid/0636ec02-57a9-41ac-8b72-c4bcd744d958')
       .then((response) => {
@@ -27,6 +28,10 @@ class StudySet extends Component {
       });
     }
     render() { 
+=======
+    render() {
+      console.log(this.props);
+>>>>>>> master
         let List = this.state.studyset.cards;
         let listOfCards = List.map((card) => {
             console.log('card:',card)
@@ -41,18 +46,23 @@ class StudySet extends Component {
                     <div className="Card-Details">
                         <div className="Definition-Position Text-Display">
                             {card.definition}
-                        </div>    
+                        </div>
                     </div>
                     <div className="Card-Details">
                         <div>
                             {card.imageURL}
-                        </div>        
+                        </div>
                     </div>
                 </div>
             )
-          
+
         })
         console.log(listOfCards)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> master
         return (
             <div>
                 <div>
@@ -60,8 +70,13 @@ class StudySet extends Component {
                         <div className="Study-Page-Header-Container">
                             <div>
                                 <span> How many terms </span>
+<<<<<<< HEAD
                                  <span>{this.props.username}</span> 
                             </div>  
+=======
+                                <span> Name of user </span>
+                            </div>
+>>>>>>> master
                             <div>
                                 <h1 className="Term-Header">{this.state.studyset.title}</h1>
                             </div>
@@ -75,7 +90,7 @@ class StudySet extends Component {
                                 <div className="Info-Buttons"></div>
                             </div>
                         </div>
-                    </div> 
+                    </div>
                     <div className="Page-Mode-Padding"> {/* Flashcards, Learn, Spell, Test, Match, and Gravity buttons */}
                         <div className="Page-Mode-Container">
                             <Link to="study-set/flashcards">
@@ -99,7 +114,7 @@ class StudySet extends Component {
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Spell">
                                     <img src= {require('../../assets/images/spell.png')}/>
-                                </div>    
+                                </div>
                                 <div className="Page-Mode-Buttons">
                                     <div className="Page-Mode-Text">Spell</div>
                                 </div>
@@ -127,30 +142,40 @@ class StudySet extends Component {
                                     <div className="Page-Image-Gravity">
                                         <img src= {require('../../assets/images/gravity.png')}/>
                                     </div>
-                                    <div className="Page-Mode-Text">Gravity</div> 
+                                    <div className="Page-Mode-Text">Gravity</div>
                                 </div>
                             </span>
                         </div>
-                    </div> 
+                    </div>
                         <div className="Study-Set-Background"> {/* Term and definition */}
-                            <div className="Study-Set-Container"> 
+                            <div className="Study-Set-Container">
                                 <div>
                                     {listOfCards}
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </div> 
                     <div className="Add-Terms-Background"> {/* Add or Remove Terms  */}
                         <div>
                             <Link to="/edit-set">
                                 <button className="Add-Terms-Button">Add or Remove Terms</button> 
                             </Link>
+=======
                         </div>
-                    </div> 
+                    <div> {/* Add or Remove Terms  */}
+                        <div>
+                            <div>
+
+                            </div>
+>>>>>>> master
+                        </div>
+                    </div>
                 </div>
             </div>
         )
     }
 }
+<<<<<<< HEAD
 
 function mapStateToProps(state) {
     console.log(state.auth.user.username)
@@ -160,3 +185,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {toggleSignInModal})(StudySet)
+=======
+>>>>>>> master

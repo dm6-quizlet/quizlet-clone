@@ -27,7 +27,8 @@ class SideNav extends Component {
 
     const folders = this.state.folders.map(folder => {
       return (
-        <div key={folder._id} onClick={() => {this.props.selectFolder(folder)}}>
+        <div className="content-containers" key={folder._id} onClick={() => {this.props.selectFolder(folder)}}>
+        <i className="fa fa-folder" aria-hidden="true"></i>
           {folder.title}
 
         </div>
@@ -60,7 +61,9 @@ class SideNav extends Component {
           </div>
           <div className="sidenav-content-containers sidenav-containers">
             <p className="title">Your Folders</p>
-            {folders}
+
+              {folders}
+
             <div className="content-containers">
               <i className="fa fa-folder-open" aria-hidden="true"></i>
               <p>Create a folder</p>
@@ -99,7 +102,8 @@ class SideNav extends Component {
 
 function mapStateToProps(state) {
   return {
-    userId: state.auth.user.id
+    userId: state.auth.user.id,
+    folders: state.folders
   }
 }
 

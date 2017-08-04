@@ -1,3 +1,7 @@
+.opening-container{
+  background-color: #f0f0f0;
+}
+
 .dashboard-content-container {
   display: flex;
   justify-content: flex-start;
@@ -5,4 +9,5 @@
 
 .dashboard-activity-container {
   margin-left: 25px;
+  width: 100%;
 }
