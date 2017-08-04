@@ -12,13 +12,24 @@ import Mission from './components/Mission/Mission'
 import Match from './components/Match/Match'
 import Flashcard from './components/Flashcard/Flashcard'
 import StudySet from './components/StudySet/StudySet'
+import Subject from './components/Subject/Subject'
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      searchTerm: ""
+    }
+    this.updateSearchTerm = this.updateSearchTerm.bind(this)
+  }
+  updateSearchTerm(searchTerm) {
+    this.setState({searchTerm})
+  }
   render() {
     return (
       <div className="App">
-        <Nav />
+        <Nav updateSearchTerm={this.updateSearchTerm}/>
         <Switch>
           <Route exact path='/' component={Splash} />
           <Route exact path='/create-set' component={CreateStudySet}/>
@@ -29,7 +40,10 @@ class App extends Component {
           <Route exact path='/mission' component={Mission} />
           <Route exact path='/study-set/match' component={Match} />
           <Route exact path='/study-set/flashcards' component={Flashcard} />
-          <Route exact path='/study-set' component={StudySet} />
+          <Route exact path='/study-set/:id' component={StudySet} />
+          <Route exact path='/subject' render={(props) => (
+            <Subject searchTerm={this.state.searchTerm} {...props}/>
+          )}/>
           <Route path="/:username" render={({match}) => {
             if (this.props.userId && match.params.username === this.props.username) {
               return <Dashboard />

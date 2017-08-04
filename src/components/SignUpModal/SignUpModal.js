@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
 import './SignUpModal.css'
 import axios from 'axios';
+import {setUser} from '../../actions/auth'
+
 class SignUpModal extends Component {
   constructor(){
     super()
@@ -20,6 +22,10 @@ class SignUpModal extends Component {
     acceptTerms() {
         this.setState({checked: !this.state.checked})
     }
+    storeUserData(token, user){
+    localStorage.setItem('id_token', token);
+    this.props.setUser(user)
+  }
 
   submitForm(e) {
     e.preventDefault()
@@ -29,8 +35,8 @@ class SignUpModal extends Component {
     	password: this.state.signUpInput.password
 
     })
-      .then(function(response) {
-        console.log(response.data);
+      .then(response => {
+        this.storeUserData(response.data.token, response.data.user)
       }) .catch(function (error) {
         console.log(error);
       });
@@ -254,4 +260,4 @@ class SignUpModal extends Component {
     }
 }
 
-export default connect(function(){return {}},{toggleSignUpModal})(SignUpModal)
+export default connect(function(){return {}},{toggleSignUpModal, setUser})(SignUpModal)

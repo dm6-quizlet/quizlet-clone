@@ -1,3 +1,8 @@
+.header-main-container {
+  background-color: white;
+  margin-bottom: 40px;
+}
+
 .profile-container {
   display: flex;
   justify-content: space-between;
@@ -104,6 +109,17 @@
   border-bottom: 2px solid #455358;
   font-size: 18px;
   outline: 0;
+  background-color: #f0f0f0;
+  color: #c0c0c0;
+}
+
+.studyset-filter placeholder {
+  color: #C0C0C0;
+}
+
+.studyset-filter:focus {
+  border-bottom: 3px solid #FFCD1F;
+  color: #FFCD1F;
 }
 
 .studyset-title {

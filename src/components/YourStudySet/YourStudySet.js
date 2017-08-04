@@ -9,8 +9,31 @@ class YourStudySet extends Component {
   constructor() {
     super()
     this.state = {
-      studysets : []
+      studysets : [],
+      searchTerm : ''
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.filterSets = this.filterSets.bind(this)
+  }
+
+  handleChange(e) {
+    this.setState({
+      searchTerm : e.target.value
+    })
+  }
+
+  filterSets(e) {
+    e.preventDefault()
+    axios.get(BASE_URL + '/api/studysets/' + this.props.user.id + '/' + this.state.searchTerm)
+    .then(response => {
+      return response.data.studyset
+    })
+    .then(studysets => {
+      this.setState({
+        studysets
+      })
+    })
+
   }
 
   componentDidMount() {
@@ -28,24 +51,14 @@ class YourStudySet extends Component {
 
   render(){
 
-    let studysets = this.state.studysets.map(set => {
-      return set
-    })
+    let {studysets} = this.state
 
     if (this.props.folder) {
       studysets = studysets.filter(studyset => {
         return this.props.folder.studysets.indexOf(studyset._id) > -1
       })
     }
-    const cards = studysets.map(set => (
-      <div className="studyset-card" key={set.id}>
-      <Card key={set._id}
-        title={set.title}
-        created_by={set.userId.username}
-        term_count={set.cards.length}
-      />
-      </div>
-    ))
+    console.log(this.state.studysets);
     return (
       <div className="main-container">
         <div className="header-main-container">
@@ -61,13 +74,10 @@ class YourStudySet extends Component {
                   </div>
                   <div className="user-info-container">
                     <div className="user-type-container">
-                      {/*this.props.user.type*/}
-                      <h6 className="user-type">Teacher</h6>
+                      <h6 className="user-type">{this.props.user.account_type}</h6>
                     </div>
                     <div className="user-name-container">
-                      {/*this.props.user.first_name*/}
-                      {/*this.props.user.last_name*/}
-                      <h6 className="user-name">Jacob Leatherwood</h6>
+                      <h6 className="user-name">{this.props.user.first_name} {this.props.user.last_name}</h6>
                     </div>
                     <div className="user-indicator-container">
                     </div>
@@ -75,9 +85,9 @@ class YourStudySet extends Component {
                 </div>
                 <div className="tabs-row">
                   <div className="tabs-container">
-                    <button className="created-button study-set-buttons" >Created ({/*user.studysets.length*/} )</button>
+                    <button className="created-button study-set-buttons" >Created ({studysets.length} )</button>
                     <button className="studied-button study-set-buttons">Studied</button>
-                    <button className="folders-button study-set-buttons" >Folders( {/*user.folders.length*/})</button>
+                    <button className="folders-button study-set-buttons" >Folders( {/*this.props.folder.length*/})</button>
                   </div>
                 </div>
               </div>
@@ -95,13 +105,15 @@ class YourStudySet extends Component {
                 </select>
               </div>
               <div className="filter-container">
-                <input type="search" placeholder="Type to Filter" className="studyset-filter"/>
-                <span className="search-border"></span>
+                <form onSubmit={this.filterSets}>
+                  <input type="search" value={this.state.searchTerm} onChange={this.handleChange} placeholder="Type to Filter" className="studyset-filter"/>
+                </form>
               </div>
             </div>
             <div className="dashboard-feed-main-container">
-              <DashboardFeedGroup />
-              {cards}
+              <DashboardFeedGroup
+                studysets = {studysets}
+              />
             </div>
           </div>
         </div>

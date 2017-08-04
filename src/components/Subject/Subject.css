@@ -1,0 +1,44 @@
+.subject-search-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subject-button-container {
+  display: flex;
+}
+
+.subject-search-title {
+  font-size: 20px;
+  color: #455358;
+}
+
+.subject-button {
+  height: 35px;
+  color: #3DCECF;
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  border-top: 2px solid #d9d9d9;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.subject-button:hover {
+  transition: .5s;
+  color: #FFCD1F;
+}
+
+.subject-button:focus {
+  background-color: #FFCD1F;
+  color: #6E6E4B;
+  outline: 0;
+}
+
+.option-button {
+  background-color: #3DCECF;
+  border: none;
+  border-radius: 0px;
+  color: white;
+  height: 45px;
+  width: 100px;
+  margin-left: 25px;
+}

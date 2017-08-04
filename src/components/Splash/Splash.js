@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {toggleSignUpModal} from '../../actions/modal'
+import axios from 'axios'
+import {BASE_URL} from '../../services/AuthService'
 import Card from '../Card/Card'
 import Footer from '../Footer/Footer'
 import './Splash.css'
@@ -17,11 +19,11 @@ class Splash extends Component {
   }
 
   componentWillMount () {
-    fetch('http://localhost:3001/api/studysets')
-    .then(response => response.json())
-    .then(res => {
+    axios.get(BASE_URL + '/api/studysets')
+    .then(response => response.data)
+    .then(studysets => {
       this.setState({
-        studysets: res
+        studysets
       })
     })
   }
@@ -34,6 +36,7 @@ class Splash extends Component {
         created_by={set.userId.username}
         term_count={set.cards.length}
         image={set.image_url}
+        _id={set._id}
         />
       )
     })
@@ -75,12 +78,16 @@ class Splash extends Component {
               <br />
               Study Sets and Counting</h2>
               <div className="study-sets">
-                <div className="make-your-own">
-                  <div className="make-your-own-content">
-                    <h1>Make the perfect study set</h1>
-                    <Link to="/create-set"><button className="study-set-button">Create your own</button></Link>
+                {studySetCards.length ?
+                  <div className="make-your-own">
+                    <div className="make-your-own-content">
+                      <h1>Make the perfect study set</h1>
+                      <Link to="/create-set"><button className="study-set-button">Create your own</button></Link>
+                    </div>
                   </div>
-                </div>
+                  :
+                  null
+                }
                 <br />
                 {studySetCards}
               </div>
