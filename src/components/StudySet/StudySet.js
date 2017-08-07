@@ -21,7 +21,7 @@ class StudySet extends Component {
         console.log(this.props.match.params.studysetid)
     axios.get('http://localhost:3001/api/studysets/studysetid/' + this.props.match.params.studysetid)
       .then((response) => {
-        console.log(response.data.studyset[0]);
+        console.log(response.data.studyset);
         this.setState({studyset:response.data.studyset})
       }) .catch(function (error) {
         console.log(error);
