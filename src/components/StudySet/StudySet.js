@@ -17,21 +17,17 @@ class StudySet extends Component {
             };    
         }
 
-<<<<<<< HEAD
     componentWillMount() {
-    axios.get('http://localhost:3001/api/studysets/studysetid/0636ec02-57a9-41ac-8b72-c4bcd744d958')
+        console.log(this.props.match.params.studysetid)
+    axios.get('http://localhost:3001/api/studysets/studysetid/' + this.props.match.params.studysetid)
       .then((response) => {
         console.log(response.data.studyset[0]);
-        this.setState({studyset:response.data.studyset[0]})
+        this.setState({studyset:response.data.studyset})
       }) .catch(function (error) {
         console.log(error);
       });
     }
     render() { 
-=======
-    render() {
-      console.log(this.props);
->>>>>>> master
         let List = this.state.studyset.cards;
         let listOfCards = List.map((card) => {
             console.log('card:',card)
@@ -58,11 +54,6 @@ class StudySet extends Component {
 
         })
         console.log(listOfCards)
-<<<<<<< HEAD
-=======
-
-
->>>>>>> master
         return (
             <div>
                 <div>
@@ -70,13 +61,8 @@ class StudySet extends Component {
                         <div className="Study-Page-Header-Container">
                             <div>
                                 <span> How many terms </span>
-<<<<<<< HEAD
                                  <span>{this.props.username}</span> 
                             </div>  
-=======
-                                <span> Name of user </span>
-                            </div>
->>>>>>> master
                             <div>
                                 <h1 className="Term-Header">{this.state.studyset.title}</h1>
                             </div>
@@ -153,21 +139,12 @@ class StudySet extends Component {
                                     {listOfCards}
                                 </div>
                             </div>
-<<<<<<< HEAD
                         </div> 
                     <div className="Add-Terms-Background"> {/* Add or Remove Terms  */}
                         <div>
                             <Link to="/edit-set">
                                 <button className="Add-Terms-Button">Add or Remove Terms</button> 
                             </Link>
-=======
-                        </div>
-                    <div> {/* Add or Remove Terms  */}
-                        <div>
-                            <div>
-
-                            </div>
->>>>>>> master
                         </div>
                     </div>
                 </div>
@@ -175,7 +152,6 @@ class StudySet extends Component {
         )
     }
 }
-<<<<<<< HEAD
 
 function mapStateToProps(state) {
     console.log(state.auth.user.username)
@@ -185,5 +161,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {toggleSignInModal})(StudySet)
-=======
->>>>>>> master

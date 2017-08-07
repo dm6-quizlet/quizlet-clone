@@ -54,7 +54,8 @@ class CreateStudySet extends Component {
       showImportCard: false,
       visibilitySetting: 0,
       privilageSettings: 0,
-      redirect: false
+      redirect: false,
+      mongoId: null
 
 
     };
@@ -78,9 +79,15 @@ class CreateStudySet extends Component {
       console.log("No user")
       this.props.toggleSignInModal()
     }
-    console.log(this.props.userId)
+    console.log("USER ID", this.props.userId)
 
-    this.setState({studysetObject: {...this.state.studysetObject, userId: this.props.userId}}, () => {console.log(this.state.studysetObject)})
+    this.setState({studysetObject: {...this.state.studysetObject, userId: this.props.userId}}
+      , () => {console.log(this.state)})
+  }
+  componentWillReceiveProps(nextProps) {
+   this.setState({studysetObject: {...this.state.studysetObject, userId: nextProps.userId}}
+      , () => {console.log(this.state)})
+
   }
 
   rotateVisibilitySettings(e) {
@@ -115,8 +122,8 @@ class CreateStudySet extends Component {
     let _this = this.state.studysetObject;
     axios.post('http://localhost:3001/api/studysets/create', _this)
       .then((response) => {
-        console.log(response.data);
-        this.setState({redirect: true})
+        console.warn(response.data);
+        this.setState({redirect: true, mongoId: response.data.studyset._id})
       }) .catch(function (error) {
         console.log(error);
       });
@@ -126,7 +133,6 @@ class CreateStudySet extends Component {
   getMyStudySet(e) {
     axios.get('http://localhost:3001/api/studysets/1234')
     .then(function(response) {
-      console.log(response.data);
     }) .catch(function (error) {
       console.log(error);
     });
@@ -143,7 +149,6 @@ class CreateStudySet extends Component {
 
   logState(e) {
     e.preventDefault
-    console.log(this.state)
   }
 
 
@@ -189,7 +194,6 @@ class CreateStudySet extends Component {
 
 
   render() {
-    console.log(this.props)
     // Here we are going to map out the array of cards in the studyset's state.
     // We
 
@@ -200,7 +204,7 @@ class CreateStudySet extends Component {
   const { redirect } = this.state;
 
   if (redirect) {
-    return <Redirect to={'/study-set/'+this.state.studysetObject.id} />;
+    return <Redirect to={'/study-set/'+ this.state.mongoId} />;
   }
 
     return (
