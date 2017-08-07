@@ -1,33 +1,33 @@
 import React, {Component} from 'react';
 import './StudySet.css'
 import axios from 'axios';
+import {Link} from "react-router-dom"
+import {connect} from "react-redux"
+import {toggleSignInModal} from "../../actions/modal"
 
-export default class StudySet extends Component {
+class StudySet extends Component {
     constructor() {
         super()
-            this.state = {};
-            this.state.studyset = {
-                id: '',
-                title: '',
-                cards: [
-                    {
-                        term: 'term1',
-                        definition: 'Oooooooooooooeoeoeoeoeoeoeoeoeoeoeoeoealskdfjalsdkjflaskdjfalskjfdoeoeoeoeoeoeoeoeoeoeeooooeoeoeoeoeoeoeoeoeoeoeoeoeoeoeoeeo',
-                        imageURL: '',
-                        id: 'asdiahouha',
-                    },
-                    {
-                        term: 'term2',
-                        definition: 'def2',
-                        imageURL: '',
-                        id: 'asdhoahrega',
-                    }
-                ],
-            }
-    }
+            this.state = {
+                studyset:{
+                    cards:[
 
-    render() {
-      console.log(this.props);
+                    ]
+                }
+            };    
+        }
+
+    componentWillMount() {
+        console.log(this.props.match.params.studysetid)
+    axios.get('http://localhost:3001/api/studysets/studysetid/' + this.props.match.params.studysetid)
+      .then((response) => {
+            console.log(response.data.studyset);
+        this.setState({studyset:response.data.studyset})
+      }) .catch(function (error) {
+        console.log(error);
+      });
+    }
+    render() { 
         let List = this.state.studyset.cards;
         let listOfCards = List.map((card) => {
             console.log('card:',card)
@@ -54,8 +54,6 @@ export default class StudySet extends Component {
 
         })
         console.log(listOfCards)
-
-
         return (
             <div>
                 <div>
@@ -63,10 +61,10 @@ export default class StudySet extends Component {
                         <div className="Study-Page-Header-Container">
                             <div>
                                 <span> How many terms </span>
-                                <span> Name of user </span>
-                            </div>
+                                 <span>{this.props.username}</span> 
+                            </div>  
                             <div>
-                                <h1 className="Term-Header">Name of term </h1>
+                                <h1 className="Term-Header">{this.state.studyset.title}</h1>
                             </div>
                         </div>
                         <div>
@@ -81,6 +79,7 @@ export default class StudySet extends Component {
                     </div>
                     <div className="Page-Mode-Padding"> {/* Flashcards, Learn, Spell, Test, Match, and Gravity buttons */}
                         <div className="Page-Mode-Container">
+                            <Link to="study-set/flashcards">
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Flashcards">
                                     <img src= {require('../../assets/images/flashcards.png')}/>
@@ -89,6 +88,7 @@ export default class StudySet extends Component {
                                     <div className="Page-Mode-Text">Flashcards</div>
                                 </div>
                             </span>
+                            </Link>
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Learn">
                                     <img src= {require('../../assets/images/learn.png')}/>
@@ -113,6 +113,7 @@ export default class StudySet extends Component {
                                     <div className="Page-Mode-Text">Test</div>
                                 </div>
                             </span>
+                            <Link to="study-set/match">
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Match">
                                     <img src= {require('../../assets/images/match.png')}/>
@@ -121,6 +122,7 @@ export default class StudySet extends Component {
                                     <div className="Page-Mode-Text">Match</div>
                                 </div>
                             </span>
+                            </Link>
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Mode-Buttons">
                                     <div className="Page-Image-Gravity">
@@ -137,12 +139,12 @@ export default class StudySet extends Component {
                                     {listOfCards}
                                 </div>
                             </div>
-                        </div>
-                    <div> {/* Add or Remove Terms  */}
+                        </div> 
+                    <div className="Add-Terms-Background"> {/* Add or Remove Terms  */}
                         <div>
-                            <div>
-
-                            </div>
+                            <Link to="/edit-set">
+                                <button className="Add-Terms-Button">Add or Remove Terms</button> 
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -150,3 +152,12 @@ export default class StudySet extends Component {
         )
     }
 }
+
+function mapStateToProps(state) {
+    console.log(state.auth.user.username)
+  return {
+    username: state.auth.user.username
+  }
+}
+
+export default connect(mapStateToProps, {toggleSignInModal})(StudySet)

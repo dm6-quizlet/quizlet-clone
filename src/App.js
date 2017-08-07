@@ -5,6 +5,8 @@ import Nav from './components/Nav/Nav'
 import Splash from './components/Splash/Splash'
 import Dashboard from './components/Dashboard/Dashboard'
 import CreateStudySet from './components/CreateStudySet/CreateStudySet'
+import StudySetEdit from './components/StudySetEdit/StudySetEdit'
+import SignInModal from './components/SignInModal/SignInModal'
 import QuizletLearn from './components/QuizletLearn/QuizletLearn'
 import Students from './components/Students/Students'
 import Teachers from './components/Teachers/Teachers'
@@ -33,6 +35,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Splash} />
           <Route exact path='/create-set' component={CreateStudySet}/>
+          <Route exact path='/edit-set' component={StudySetEdit}/>
           <Route exact path='/splash' component={Splash}/>
           <Route exact path='/quizletLearn' component={QuizletLearn} />
           <Route exact path='/students' component={Students} />
@@ -40,7 +43,7 @@ class App extends Component {
           <Route exact path='/mission' component={Mission} />
           <Route exact path='/study-set/match' component={Match} />
           <Route exact path='/study-set/flashcards' component={Flashcard} />
-          <Route exact path='/study-set/:id' component={StudySet} />
+          <Route exact path='/study-set/:studysetid' component={StudySet} />
           <Route exact path='/subject' render={(props) => (
             <Subject searchTerm={this.state.searchTerm} {...props}/>
           )}/>
