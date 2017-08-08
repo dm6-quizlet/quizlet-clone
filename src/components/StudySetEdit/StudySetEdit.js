@@ -6,7 +6,7 @@ import uuid from 'uuid'
 import axios from 'axios'
 import './StudySetEdit.css'
 import {Link} from "react-router-dom"
-
+import {BASE_URL} from '../../services/AuthService'
 
 class CreateStudySet extends Component {
   constructor(){
@@ -98,7 +98,7 @@ class CreateStudySet extends Component {
   handleSubmit(e) {
     e.preventDefault()
     let _this = this.state.studysetObject;
-    axios.post('http://localhost:3001/api/studysets/create', _this)
+    axios.post(BASE_URL + '/api/studysets/create', _this)
       .then(function(response) {
         console.log(response.data);
       }) .catch(function (error) {
@@ -108,7 +108,7 @@ class CreateStudySet extends Component {
   }
 
   getMyStudySet(e) {
-    axios.get('http://localhost:3001/api/studysets/1234')
+    axios.get(BASE_URL + '/api/studysets/1234')
     .then(function(response) {
       console.log(response.data);
     }) .catch(function (error) {

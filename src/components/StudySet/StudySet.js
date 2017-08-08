@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 import {toggleSignInModal} from "../../actions/modal"
+import {BASE_URL} from '../../services/AuthService'
 
 class StudySet extends Component {
     constructor() {
@@ -14,12 +15,12 @@ class StudySet extends Component {
 
                     ]
                 }
-            };    
+            };
         }
 
     componentWillMount() {
         console.log(this.props.match.params.studysetid)
-    axios.get('http://localhost:3001/api/studysets/studysetid/' + this.props.match.params.studysetid)
+    axios.get(BASE_URL + '/api/studysets/studysetid/' + this.props.match.params.studysetid)
       .then((response) => {
             console.log(response.data.studyset);
         this.setState({studyset:response.data.studyset})
@@ -27,7 +28,7 @@ class StudySet extends Component {
         console.log(error);
       });
     }
-    render() { 
+    render() {
         let List = this.state.studyset.cards;
         let listOfCards = List.map((card) => {
             console.log('card:',card)
@@ -61,8 +62,8 @@ class StudySet extends Component {
                         <div className="Study-Page-Header-Container">
                             <div>
                                 <span> How many terms </span>
-                                 <span>{this.props.username}</span> 
-                            </div>  
+                                 <span>{this.props.username}</span>
+                            </div>
                             <div>
                                 <h1 className="Term-Header">{this.state.studyset.title}</h1>
                             </div>
@@ -139,11 +140,11 @@ class StudySet extends Component {
                                     {listOfCards}
                                 </div>
                             </div>
-                        </div> 
+                        </div>
                     <div className="Add-Terms-Background"> {/* Add or Remove Terms  */}
                         <div>
                             <Link to="/edit-set">
-                                <button className="Add-Terms-Button">Add or Remove Terms</button> 
+                                <button className="Add-Terms-Button">Add or Remove Terms</button>
                             </Link>
                         </div>
                     </div>

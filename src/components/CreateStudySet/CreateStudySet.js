@@ -7,6 +7,7 @@ import Card from './Card'
 import uuid from 'uuid'
 import axios from 'axios'
 import {Link, Redirect} from "react-router-dom"
+import {BASE_URL} from '../../services/AuthService'
 import './CreateStudySet.css'
 
 
@@ -120,7 +121,7 @@ class CreateStudySet extends Component {
   handleSubmit(e) {
     e.preventDefault()
     let _this = this.state.studysetObject;
-    axios.post('http://localhost:3001/api/studysets/create', _this)
+    axios.post(BASE_URL + '/api/studysets/create', _this)
       .then((response) => {
         console.warn(response.data);
         this.setState({redirect: true, mongoId: response.data.studyset._id})
@@ -131,7 +132,7 @@ class CreateStudySet extends Component {
   }
 
   getMyStudySet(e) {
-    axios.get('http://localhost:3001/api/studysets/1234')
+    axios.get(BASE_URL + '/api/studysets/1234')
     .then(function(response) {
     }) .catch(function (error) {
       console.log(error);
@@ -286,5 +287,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {toggleSignInModal})(CreateStudySet)
-
-

@@ -4,6 +4,7 @@ import axios from 'axios';
 import {Link} from "react-router-dom"
 import {connect} from "react-redux"
 import {toggleSignInModal} from "../../actions/modal"
+import {BASE_URL} from '../../services/AuthService'
 
 class Flashcard extends Component {
   constructor() {
@@ -23,7 +24,7 @@ class Flashcard extends Component {
 
       componentWillMount() {
         console.log(this.props.match.params.studysetid)
-    axios.get('http://localhost:3001/api/studysets/studysetid/' + this.props.match.params.studysetid)
+    axios.get(BASE_URL + '/api/studysets/studysetid/' + this.props.match.params.studysetid)
       .then((response) => {
             console.log(response.data.studyset.cards);
         this.setState({cards: response.data.studyset.cards})
@@ -78,7 +79,7 @@ class Flashcard extends Component {
             <div className="progression-bar">
               <div className="progression-total"></div>
               <div style={{width: ((this.state.activeCard+1)/(this.state.total+1)*100+'%')}} className="progression-progress"></div>
-              
+
             </div>
             <label className="Input-Label">Progress</label>
             {this.state.activeCard+1} of {this.state.total+1}
