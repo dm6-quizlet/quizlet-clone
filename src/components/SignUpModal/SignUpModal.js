@@ -4,6 +4,7 @@ import {toggleSignUpModal} from '../../actions/modal'
 import './SignUpModal.css'
 import axios from 'axios';
 import {setUser} from '../../actions/auth'
+import {BASE_URL} from '../../services/AuthService'
 
 class SignUpModal extends Component {
   constructor(){
@@ -29,7 +30,7 @@ class SignUpModal extends Component {
 
   submitForm(e) {
     e.preventDefault()
-    axios.post('http://localhost:3001/api/users/register', {
+    axios.post(BASE_URL + '/api/users/register', {
     	username: this.state.signUpInput.username,
     	email: this.state.signUpInput.email,
     	password: this.state.signUpInput.password

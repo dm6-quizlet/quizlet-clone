@@ -6,6 +6,7 @@ import '../SignUpModal/SignUpModal.css'
 import axios from 'axios';
 import './SignInModal.css'
 import {setUser} from '../../actions/auth'
+import {BASE_URL} from '../../services/AuthService'
 
 class SignInModal extends Component {
   constructor() {
@@ -50,7 +51,7 @@ class SignInModal extends Component {
       password: this.state.signInInput.password
     }
 
-    axios.post('http://localhost:3001/api/users/authenticate', user)
+    axios.post(BASE_URL + '/api/users/authenticate', user)
       .then((response) => {
         this.storeUserData(response.data.token, response.data.user)
       })  .catch(function(error) {
