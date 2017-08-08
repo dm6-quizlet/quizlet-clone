@@ -233,10 +233,7 @@ class CreateStudySet extends Component {
           <div className="col-md-1"><div clasName="tooltip" onClick={()=>{this.setState({showDescription: !this.state.showDescription})}}>
 
             {/* SVG vector image */}
-            <svg viewBox="0 0 200 200" xmlns="http://w3.org/2000/svg">
-            {!this.state.showDescription?'!':'X'}
-              <circle cx="100" cy="50" r="50"/>
-            </svg>
+
             <div className="tooltiptext">Hello</div>
           </div></div>
         </div>

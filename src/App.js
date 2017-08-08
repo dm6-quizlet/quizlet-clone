@@ -41,8 +41,8 @@ class App extends Component {
           <Route exact path='/students' component={Students} />
           <Route exact path='/teachers' component={Teachers} />
           <Route exact path='/mission' component={Mission} />
-          <Route exact path='/study-set/match' component={Match} />
-          <Route exact path='/study-set/flashcards' component={Flashcard} />
+          <Route exact path='/study-set/:studysetid/match' component={Match} />
+          <Route exact path='/study-set/:studysetid/flashcards' component={Flashcard} />
           <Route exact path='/study-set/:studysetid' component={StudySet} />
           <Route exact path='/subject' render={(props) => (
             <Subject searchTerm={this.state.searchTerm} {...props}/>
