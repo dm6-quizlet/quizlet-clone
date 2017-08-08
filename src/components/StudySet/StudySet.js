@@ -79,7 +79,7 @@ class StudySet extends Component {
                     </div>
                     <div className="Page-Mode-Padding"> {/* Flashcards, Learn, Spell, Test, Match, and Gravity buttons */}
                         <div className="Page-Mode-Container">
-                            <Link to="study-set/flashcards">
+                            <Link to={"/study-set/"+this.props.match.params.studysetid +"/flashcards"}>
                             <span className="Page-Mode-Button-Wrapper">
                                 <div className="Page-Image-Flashcards">
                                     <img src= {require('../../assets/images/flashcards.png')}/>
